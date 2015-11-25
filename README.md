@@ -10,6 +10,7 @@ Finally, use Cocoapods to install the dependencies and open the .xcworkspace fol
 
 ```
 git clone git@github.com:andrewmunsell/loop-news.git
+cd loop-news
 git checkout develop
 pod install
 open Loop News.xcworkspace
