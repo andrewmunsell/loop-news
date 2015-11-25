@@ -13,5 +13,5 @@ git clone git@github.com:andrewmunsell/loop-news.git
 cd loop-news
 git checkout develop
 pod install
-open Loop News.xcworkspace
+open Loop\ News.xcworkspace
 ```
