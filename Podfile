@@ -15,10 +15,3 @@ end
 target 'Loop NewsUITests' do
 
 end
-
-plugin 'cocoapods-keys', {
-    :project => "LoopNews",
-    :keys => [
-    "ParseApplicationId",
-    "ParseClientKey"
-]}
