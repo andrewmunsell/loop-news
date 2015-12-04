@@ -6,4 +6,12 @@
 //  Copyright © 2015 Loop News. All rights reserved.
 //
 
-import Foundation
+class LoopNews {
+    static func getAllEvents(callback: ([Event]?, NSError?) -> Void) {
+        
+    }
+    
+    static func getEvent(callback: (Event?, NSError?) -> Void) {
+        
+    }
+}
