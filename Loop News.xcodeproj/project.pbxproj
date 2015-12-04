@@ -15,6 +15,7 @@
 		49D3A2CC1C055A3900F2D249 /* Loop_NewsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D3A2CB1C055A3900F2D249 /* Loop_NewsTests.swift */; };
 		49D3A2D71C055A3900F2D249 /* Loop_NewsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D3A2D61C055A3900F2D249 /* Loop_NewsUITests.swift */; };
 		8E527AB943E8D6AA6397CE0E /* Pods_Loop_News.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B697700AF4F87065BB703FB3 /* Pods_Loop_News.framework */; };
+		C198655A5EC7CB4606CDC9D2 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9DDA71E68F61C84BC82EA6C /* Pods.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 
 /* Begin PBXFileReference section */
 		2310F37F5A92C6C3DA297584 /* Pods-Loop News.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Loop News.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Loop News/Pods-Loop News.debug.xcconfig"; sourceTree = "<group>"; };
+		49C5C5761C1127E30075FFD5 /* Loop News-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Loop News-Bridging-Header.h"; sourceTree = "<group>"; };
 		49D3A2B31C055A3900F2D249 /* Loop News.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Loop News.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		49D3A2B61C055A3900F2D249 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49D3A2B81C055A3900F2D249 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,9 +51,9 @@
 		49D3A2D21C055A3900F2D249 /* Loop NewsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Loop NewsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		49D3A2D61C055A3900F2D249 /* Loop_NewsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loop_NewsUITests.swift; sourceTree = "<group>"; };
 		49D3A2D81C055A3900F2D249 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		49D3A2E41C05614500F2D249 /* Loop News-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Loop News-Bridging-Header.h"; sourceTree = "<group>"; };
 		54D68648D9EF28812D193506 /* Pods-Loop News.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Loop News.release.xcconfig"; path = "Pods/Target Support Files/Pods-Loop News/Pods-Loop News.release.xcconfig"; sourceTree = "<group>"; };
 		B697700AF4F87065BB703FB3 /* Pods_Loop_News.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Loop_News.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9DDA71E68F61C84BC82EA6C /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E527AB943E8D6AA6397CE0E /* Pods_Loop_News.framework in Frameworks */,
+				C198655A5EC7CB4606CDC9D2 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +83,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		49C5C5741C11265A0075FFD5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				49C5C5761C1127E30075FFD5 /* Loop News-Bridging-Header.h */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		49D3A2AA1C055A3900F2D249 = {
 			isa = PBXGroup;
 			children = (
@@ -111,7 +122,7 @@
 				49D3A2BD1C055A3900F2D249 /* Assets.xcassets */,
 				49D3A2BF1C055A3900F2D249 /* LaunchScreen.storyboard */,
 				49D3A2C21C055A3900F2D249 /* Info.plist */,
-				49D3A2E41C05614500F2D249 /* Loop News-Bridging-Header.h */,
+				49C5C5741C11265A0075FFD5 /* Supporting Files */,
 			);
 			path = "Loop News";
 			sourceTree = "<group>";
@@ -147,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				B697700AF4F87065BB703FB3 /* Pods_Loop_News.framework */,
+				C9DDA71E68F61C84BC82EA6C /* Pods.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -323,7 +335,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Loop News/Pods-Loop News-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -484,6 +496,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Loop News/Loop News-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				USER_HEADER_SEARCH_PATHS = "Pods/**";
 			};
 			name = Debug;
 		};
@@ -498,6 +511,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "net.loopnews.Loop-News";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Loop News/Loop News-Bridging-Header.h";
+				USER_HEADER_SEARCH_PATHS = "Pods/**";
 			};
 			name = Release;
 		};

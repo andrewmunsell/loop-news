@@ -8,21 +8,60 @@
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>Keys.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>7</integer>
 		</dict>
 		<key>Parse.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>2</integer>
 		</dict>
 		<key>Pods-Loop News.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
+		<key>Pods-Loop NewsTests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>5</integer>
+		</dict>
+		<key>Pods-Loop NewsUITests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>6</integer>
+		</dict>
+		<key>Pods.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>3</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>279D8B848D49FB750305029396D43153</key>
+		<key>262C3A00B842154831DD718ACAA856C3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>331D6DDC3725F5788CE940D586A2698F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -33,6 +72,21 @@
 			<true/>
 		</dict>
 		<key>708E01B006A9F88B3C13711562282B5E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8D84C45177FA5F0408F68A0AD7A747ED</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>99B15B10E610E210BED46D7AEDE7DC17</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F32D052B04179AB9F26154B2F92C1532</key>
 		<dict>
 			<key>primary</key>
 			<true/>
