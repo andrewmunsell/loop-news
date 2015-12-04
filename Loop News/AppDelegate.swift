@@ -15,10 +15,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         Parse.setApplicationId("dzEbbwL3qNmZXASa9uTObhiZXE1rDONUxjrlD9LQ",
             clientKey: "fBViAezq7SPfS98ALm5kRToRpji4y1i1SJiZJNoq")
+        
+        // Initialize the Parse objects
+        Event.initialize()
+        Story.initialize()
         
         return true
     }
