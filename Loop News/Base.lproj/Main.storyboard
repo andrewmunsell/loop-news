@@ -22,7 +22,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cLu-fv-0Au" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1950" y="-777"/>
+            <point key="canvasLocation" x="1950" y="-485"/>
         </scene>
         <!--Discover-->
         <scene sceneID="tne-QT-ifu">
@@ -42,6 +42,7 @@
                     <connections>
                         <segue destination="qJk-qN-tRp" kind="show" identifier="ShowTimeline" id="xFR-3K-L5a"/>
                         <segue destination="cwV-Wr-SYs" kind="show" identifier="ShowSettings" id="kYu-pZ-ak8"/>
+                        <segue destination="Jx0-q0-bDg" kind="show" identifier="ShowSearchResults" id="f8X-Er-6wv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -65,7 +66,26 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3iF-br-Ify" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1950" y="40"/>
+            <point key="canvasLocation" x="2650" y="40"/>
+        </scene>
+        <!--Search Results-->
+        <scene sceneID="wr3-it-glb">
+            <objects>
+                <viewController title="Search Results" id="Jx0-q0-bDg" customClass="SearchResultsViewController" customModule="Loop_News" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mIg-U5-9vj"/>
+                        <viewControllerLayoutGuide type="bottom" id="O7e-GX-AQ8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Xuu-PI-NA8">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5HY-tQ-O9J" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1950" y="576"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="wjh-WV-9rv">
