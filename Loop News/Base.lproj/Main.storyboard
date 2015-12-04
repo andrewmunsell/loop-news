@@ -43,6 +43,7 @@
                         <segue destination="qJk-qN-tRp" kind="show" identifier="ShowTimeline" id="xFR-3K-L5a"/>
                         <segue destination="cwV-Wr-SYs" kind="show" identifier="ShowSettings" id="kYu-pZ-ak8"/>
                         <segue destination="Jx0-q0-bDg" kind="show" identifier="ShowSearchResults" id="f8X-Er-6wv"/>
+                        <segue destination="djD-UB-y7Z" kind="show" identifier="ShowMap" id="9bd-11-eNw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -86,6 +87,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5HY-tQ-O9J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1950" y="576"/>
+        </scene>
+        <!--Map-->
+        <scene sceneID="5XV-QD-KVW">
+            <objects>
+                <viewController title="Map" id="djD-UB-y7Z" customClass="MapViewController" customModule="Loop_News" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gBZ-P7-oHt"/>
+                        <viewControllerLayoutGuide type="bottom" id="kjL-sR-uZR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="CVQ-PH-IUB">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Ge-AW-jcu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1950" y="1312"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="wjh-WV-9rv">

@@ -11,6 +11,7 @@
 		49C5C57D1C112A310075FFD5 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C5C57C1C112A310075FFD5 /* SettingsViewController.swift */; };
 		49C5C57F1C112A430075FFD5 /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C5C57E1C112A430075FFD5 /* TimelineViewController.swift */; };
 		49C5C5811C112ABD0075FFD5 /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C5C5801C112ABD0075FFD5 /* SearchResultsViewController.swift */; };
+		49C5C5831C1131BB0075FFD5 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C5C5821C1131BB0075FFD5 /* MapViewController.swift */; };
 		49D3A2B71C055A3900F2D249 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D3A2B61C055A3900F2D249 /* AppDelegate.swift */; };
 		49D3A2BC1C055A3900F2D249 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49D3A2BA1C055A3900F2D249 /* Main.storyboard */; };
 		49D3A2BE1C055A3900F2D249 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49D3A2BD1C055A3900F2D249 /* Assets.xcassets */; };
@@ -45,6 +46,7 @@
 		49C5C57C1C112A310075FFD5 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = Controllers/SettingsViewController.swift; sourceTree = "<group>"; };
 		49C5C57E1C112A430075FFD5 /* TimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimelineViewController.swift; path = Controllers/TimelineViewController.swift; sourceTree = "<group>"; };
 		49C5C5801C112ABD0075FFD5 /* SearchResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchResultsViewController.swift; path = Controllers/SearchResultsViewController.swift; sourceTree = "<group>"; };
+		49C5C5821C1131BB0075FFD5 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = Controllers/MapViewController.swift; sourceTree = "<group>"; };
 		49D3A2B31C055A3900F2D249 /* Loop News.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Loop News.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		49D3A2B61C055A3900F2D249 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49D3A2BB1C055A3900F2D249 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 				49C5C57C1C112A310075FFD5 /* SettingsViewController.swift */,
 				49C5C57E1C112A430075FFD5 /* TimelineViewController.swift */,
 				49C5C5801C112ABD0075FFD5 /* SearchResultsViewController.swift */,
+				49C5C5821C1131BB0075FFD5 /* MapViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -379,6 +382,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				49C5C57B1C112A1C0075FFD5 /* DiscoverViewController.swift in Sources */,
+				49C5C5831C1131BB0075FFD5 /* MapViewController.swift in Sources */,
 				49D3A2B71C055A3900F2D249 /* AppDelegate.swift in Sources */,
 				49C5C57D1C112A310075FFD5 /* SettingsViewController.swift in Sources */,
 				49C5C57F1C112A430075FFD5 /* TimelineViewController.swift in Sources */,
