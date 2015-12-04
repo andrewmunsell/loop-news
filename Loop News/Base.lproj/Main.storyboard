@@ -38,8 +38,10 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Jxd-IW-Ath"/>
+                    <navigationItem key="navigationItem" title="Loop" id="RW4-0A-W7h"/>
                     <connections>
+                        <outlet property="navigationItem" destination="RW4-0A-W7h" id="TaP-zt-HSj"/>
+                        <outlet property="titleBar" destination="RW4-0A-W7h" id="xmp-jc-5IX"/>
                         <segue destination="qJk-qN-tRp" kind="show" identifier="ShowTimeline" id="xFR-3K-L5a"/>
                         <segue destination="cwV-Wr-SYs" kind="show" identifier="ShowSettings" id="kYu-pZ-ak8"/>
                         <segue destination="Jx0-q0-bDg" kind="show" identifier="ShowSearchResults" id="f8X-Er-6wv"/>
