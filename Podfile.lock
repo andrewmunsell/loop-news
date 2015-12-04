@@ -1,10 +1,12 @@
 PODS:
   - Bolts/Tasks (1.5.0)
+  - Eureka (1.2.0)
   - Keys (1.0.0)
   - Parse (1.10.0):
     - Bolts/Tasks (~> 1.5)
 
 DEPENDENCIES:
+  - Eureka (~> 1.2)
   - Keys (from `Pods/CocoaPodsKeys`)
   - Parse (~> 1.10)
 
@@ -14,6 +16,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Bolts: 722ab9a4f8b50fc4ed1b9998a5a7a2b3f16d80b4
+  Eureka: aa7059d2a30e1b206a581f0aabfcf903ece6beae
   Keys: 7d2ff6ff42f6903358267ce56e9392f83c31acfe
   Parse: 90b2544822200f84b18bfacc4e8b0a3a6c3584a2
 

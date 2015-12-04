@@ -5,6 +5,7 @@ use_frameworks!
 
 target 'Loop News' do
 	pod 'Parse', '~> 1.10'
+	pod 'Eureka', '~> 1.2'
 end
 
 target 'Loop NewsTests' do
