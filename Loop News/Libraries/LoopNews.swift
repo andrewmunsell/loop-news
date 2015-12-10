@@ -22,6 +22,6 @@ class LoopNews {
      * @deprecated
      */
     static func getEvent(event: String, callback: (Event?, NSError?) -> Void) {
-        Event.get(event, callback)
+        Event.get(event, callback: callback)
     }
 }
