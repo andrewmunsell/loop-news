@@ -11,6 +11,8 @@ import Parse
 class Story: PFObject, PFSubclassing {
     @NSManaged var title: String
     @NSManaged var url: String
+    @NSManaged var date: NSDate
+    @NSManaged var event: Event
     
     /**
      * Get the name of the Parse class name
