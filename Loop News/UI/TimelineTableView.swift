@@ -78,6 +78,8 @@ class TimelineTableView: UITableView {
                         cell.setEventImage(headerImage)
                     })
                 })
+            } else {
+                cell.eventImageView.backgroundColor = UIColor.darkGrayColor()
             }
             
             return cell
