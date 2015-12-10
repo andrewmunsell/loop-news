@@ -8,6 +8,7 @@ use_frameworks!
 target 'Loop News' do
 	pod 'Parse', '~> 1.10'
 	pod 'Eureka', '~> 1.2'
+	pod 'AFDateHelper'
 end
 
 target 'Loop NewsTests' do

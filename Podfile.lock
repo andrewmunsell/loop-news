@@ -1,14 +1,17 @@
 PODS:
+  - AFDateHelper (3.1.1)
   - Bolts/Tasks (1.5.0)
   - Eureka (1.2.0)
   - Parse (1.10.0):
     - Bolts/Tasks (~> 1.5)
 
 DEPENDENCIES:
+  - AFDateHelper
   - Eureka (~> 1.2)
   - Parse (~> 1.10)
 
 SPEC CHECKSUMS:
+  AFDateHelper: 22d6439a3529a144c89b7e6aa214ebbe4d5c2337
   Bolts: 722ab9a4f8b50fc4ed1b9998a5a7a2b3f16d80b4
   Eureka: aa7059d2a30e1b206a581f0aabfcf903ece6beae
   Parse: 90b2544822200f84b18bfacc4e8b0a3a6c3584a2
