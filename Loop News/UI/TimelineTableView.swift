@@ -65,6 +65,21 @@ class TimelineTableView: UITableView {
             cell.setEventTitle(self.event!.title)
             cell.setEventDate(self.event!.date)
             
+            if self.event!.headerImage != nil {
+                // We get the image on a background thread so we aren't blocking the UI
+                dispatch_async(GlobalBackgroundQueue, { () -> Void in
+                    let url = NSURL(string: self.event!.headerImage!)!
+                    let data = NSData(contentsOfURL: url)!
+                    
+                    let headerImage: UIImage = UIImage(data: data)!
+                    
+                    // Switch back to the main thread so that we can assign the image to the cell
+                    dispatch_async(GlobalMainQueue, { () -> Void in
+                        cell.setEventImage(headerImage)
+                    })
+                })
+            }
+            
             return cell
         } else {
             let cell = self.dequeueReusableCellWithIdentifier("TimelineSingleStoryCell") as! TimelineSingleStoryCell
