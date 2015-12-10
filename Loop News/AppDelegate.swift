@@ -22,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Initialize the Parse objects
         Event.initialize()
         Story.initialize()
+        Subscription.initialize()
         
         return true
     }
