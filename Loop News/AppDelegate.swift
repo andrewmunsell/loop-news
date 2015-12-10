@@ -19,6 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Parse.setApplicationId("dzEbbwL3qNmZXASa9uTObhiZXE1rDONUxjrlD9LQ",
             clientKey: "fBViAezq7SPfS98ALm5kRToRpji4y1i1SJiZJNoq")
         
+        PFUser.enableAutomaticUser()
+        PFUser.currentUser()?.saveEventually()
+        
         // Initialize the Parse objects
         Event.initialize()
         Story.initialize()
