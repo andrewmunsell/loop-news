@@ -30,4 +30,20 @@ class Story: PFObject, PFSubclassing {
             self.registerSubclass()
         }
     }
+    
+    /**
+     * Get the stories that belong to the specified event
+     */
+    static func forEvent(event: Event, callback: ([Story]?, NSError?) -> Void) {
+        let query = Story.query()!
+        
+        query.whereKey("event", equalTo: event)
+        query.orderByDescending("date")
+        
+        query.cachePolicy = .NetworkElseCache
+        
+        query.findObjectsInBackgroundWithBlock { (stories: [PFObject]?, err: NSError?) -> Void in
+            callback(stories as? [Story], err)
+        }
+    }
 }

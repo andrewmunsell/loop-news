@@ -48,7 +48,7 @@ class Event: PFObject, PFSubclassing {
     /**
      * Get an event by the specified ID
      */
-    static func get(id: String, callback: ([Event]?, NSError?) -> Void) {
+    static func get(id: String, callback: (Event?, NSError?) -> Void) {
         let query = Event.query()!
         
         query.getObjectInBackgroundWithId(id) { (event: PFObject?, err: NSError?) -> Void in
