@@ -11,23 +11,17 @@ import Parse
 class LoopNews {
     /**
      * Get all of the events
+     * @deprecated
      */
     static func getAllEvents(callback: ([Event]?, NSError?) -> Void) {
-        let query = Event.query()!
-        
-        query.findObjectsInBackgroundWithBlock { (events: [PFObject]?, err: NSError?) -> Void in
-            callback(events as? [Event], err)
-        }
+        Event.all(callback)
     }
     
     /**
-     * Get an event by its ID
+     * Get an event by its ID.
+     * @deprecated
      */
     static func getEvent(event: String, callback: (Event?, NSError?) -> Void) {
-        let query = Event.query()!
-        
-        query.getObjectInBackgroundWithId(event) { (event: PFObject?, err: NSError?) -> Void in
-            callback(event as? Event, err)
-        }
+        Event.get(event, callback)
     }
 }

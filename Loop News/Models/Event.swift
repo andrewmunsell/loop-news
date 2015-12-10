@@ -33,4 +33,26 @@ class Event: PFObject, PFSubclassing {
             self.registerSubclass()
         }
     }
+    
+    /**
+     * Get all of the events
+     */
+    static func all(callback: ([Event]?, NSError?) -> Void) {
+        let query = Event.query()!
+        
+        query.findObjectsInBackgroundWithBlock { (events: [PFObject]?, err: NSError?) -> Void in
+            callback(events as? [Event], err)
+        }
+    }
+    
+    /**
+     * Get an event by the specified ID
+     */
+    static func get(id: String, callback: ([Event]?, NSError?) -> Void) {
+        let query = Event.query()!
+        
+        query.getObjectInBackgroundWithId(id) { (event: PFObject?, err: NSError?) -> Void in
+            callback(event as? Event, err)
+        }
+    }
 }
