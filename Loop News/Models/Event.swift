@@ -11,7 +11,7 @@ import Parse
 class Event: PFObject, PFSubclassing {
     @NSManaged var title: String
     @NSManaged var desc: String
-    @NSManaged var date: String
+    @NSManaged var date: NSDate
     
     /**
      * Get the name of the Parse class name
