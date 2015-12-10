@@ -7,11 +7,14 @@
 //
 
 class TimelineTableView: UITableView {
+    var event: Event?
+    
     /**
      * Stories in the timeline
      */
     var stories: [Story] = []
     
+    private var headerCellNib = UINib(nibName: "TimelineHeaderCell", bundle: NSBundle.mainBundle())
     private var singleStoryCellNib = UINib(nibName: "TimelineSingleStoryCell", bundle: NSBundle.mainBundle())
     
     /**
@@ -32,6 +35,7 @@ class TimelineTableView: UITableView {
         self.rowHeight = UITableViewAutomaticDimension
         
         // Register the cell nibs
+        self.registerNib(self.headerCellNib, forCellReuseIdentifier: "TimelineHeaderCell")
         self.registerNib(self.singleStoryCellNib, forCellReuseIdentifier: "TimelineSingleStoryCell")
     }
     
@@ -47,18 +51,28 @@ class TimelineTableView: UITableView {
      * Number of rows in the table. We only have a single section so we ignore the parameter.
      */
     override func numberOfRowsInSection(section: Int) -> Int {
-        return self.stories.count
+        return 1 /* the header */ + self.stories.count /* the stories */
     }
     
     /**
      * Get the cell for the specified row
      */
     override func cellForRowAtIndexPath(indexPath: NSIndexPath) -> UITableViewCell? {
-        let cell = self.dequeueReusableCellWithIdentifier("TimelineSingleStoryCell") as! TimelineSingleStoryCell
-        
-        cell.setStoryTitle(self.stories[indexPath.row].title)
-        cell.setStoryDate(self.stories[indexPath.row].date)
-        
-        return cell
+        if indexPath.row == 0 {
+            // This is the timeline header
+            let cell = self.dequeueReusableCellWithIdentifier("TimelineHeaderCell") as! TimelineHeaderCell
+            
+            cell.setEventTitle(self.event!.title)
+            cell.setEventDate(self.event!.date)
+            
+            return cell
+        } else {
+            let cell = self.dequeueReusableCellWithIdentifier("TimelineSingleStoryCell") as! TimelineSingleStoryCell
+            
+            cell.setStoryTitle(self.stories[indexPath.row].title)
+            cell.setStoryDate(self.stories[indexPath.row].date)
+            
+            return cell
+        }
     }
 }

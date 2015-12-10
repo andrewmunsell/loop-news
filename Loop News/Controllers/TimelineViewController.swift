@@ -16,6 +16,9 @@ class TimelineViewController: UIViewController {
     var event: Event?
     
     override func viewDidLoad() {
+        // Set the event for the timeline table
+        self.timelineTable.event = event
+        
         // Hide the nav bar for the timeline since we have our own custom UI
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         
