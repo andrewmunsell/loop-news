@@ -27,6 +27,10 @@ class TimelineTableView: UITableView {
     override init(frame: CGRect, style: UITableViewStyle) {
         super.init(frame: frame, style: style)
         
+        // Setup the auto-height
+        self.estimatedRowHeight = 50
+        self.rowHeight = UITableViewAutomaticDimension
+        
         // Register the cell nibs
         self.registerNib(self.singleStoryCellNib, forCellReuseIdentifier: "TimelineSingleStoryCell")
     }
