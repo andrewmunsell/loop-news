@@ -27,6 +27,7 @@
 		49EF79D51C193954001D6BBA /* TimelineSingleStoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49EF79D31C193954001D6BBA /* TimelineSingleStoryCell.xib */; };
 		49EF79D71C193F57001D6BBA /* TimelineHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49EF79D61C193F57001D6BBA /* TimelineHeaderCell.xib */; };
 		49EF79D91C1943DB001D6BBA /* TimelineHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EF79D81C1943DB001D6BBA /* TimelineHeaderCell.swift */; };
+		49EF79DB1C1947FE001D6BBA /* GCDHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EF79DA1C1947FE001D6BBA /* GCDHelper.swift */; };
 		8E527AB943E8D6AA6397CE0E /* Pods_Loop_News.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B697700AF4F87065BB703FB3 /* Pods_Loop_News.framework */; };
 		C198655A5EC7CB4606CDC9D2 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9DDA71E68F61C84BC82EA6C /* Pods.framework */; };
 /* End PBXBuildFile section */
@@ -77,6 +78,7 @@
 		49EF79D31C193954001D6BBA /* TimelineSingleStoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TimelineSingleStoryCell.xib; path = UI/Cells/TimelineSingleStoryCell.xib; sourceTree = "<group>"; };
 		49EF79D61C193F57001D6BBA /* TimelineHeaderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TimelineHeaderCell.xib; path = UI/Cells/TimelineHeaderCell.xib; sourceTree = "<group>"; };
 		49EF79D81C1943DB001D6BBA /* TimelineHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineHeaderCell.swift; sourceTree = "<group>"; };
+		49EF79DA1C1947FE001D6BBA /* GCDHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GCDHelper.swift; path = Libraries/GCDHelper.swift; sourceTree = "<group>"; };
 		54D68648D9EF28812D193506 /* Pods-Loop News.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Loop News.release.xcconfig"; path = "Pods/Target Support Files/Pods-Loop News/Pods-Loop News.release.xcconfig"; sourceTree = "<group>"; };
 		B697700AF4F87065BB703FB3 /* Pods_Loop_News.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Loop_News.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9DDA71E68F61C84BC82EA6C /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -122,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				493140991C113BFD00F63243 /* LoopNews.swift */,
+				49EF79DA1C1947FE001D6BBA /* GCDHelper.swift */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -440,6 +443,7 @@
 				49EF79D91C1943DB001D6BBA /* TimelineHeaderCell.swift in Sources */,
 				49C5C5831C1131BB0075FFD5 /* MapViewController.swift in Sources */,
 				49EF79CA1C192032001D6BBA /* Subscription.swift in Sources */,
+				49EF79DB1C1947FE001D6BBA /* GCDHelper.swift in Sources */,
 				49D3A2B71C055A3900F2D249 /* AppDelegate.swift in Sources */,
 				49EF79D41C193954001D6BBA /* TimelineSingleStoryCell.swift in Sources */,
 				49C5C57D1C112A310075FFD5 /* SettingsViewController.swift in Sources */,
