@@ -16,6 +16,13 @@ class TimelineHeaderCell: UITableViewCell {
     @IBOutlet weak var eventOngoingLabel: UILabel!
     
     /**
+     * Set the image for the header, cross fading from whatever used to be in the image view
+     */
+    func setEventImage(image: UIImage) {
+        UIView.transitionWithView(self.eventImageView, duration: 1.0, options: .TransitionCrossDissolve, animations: { self.eventImageView.image = image }, completion: nil)
+    }
+    
+    /**
      * Set the title of the event
      */
     func setEventTitle(title: String) {
