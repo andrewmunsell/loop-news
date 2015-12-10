@@ -23,24 +23,24 @@
                         </constraints>
                     </imageView>
                     <view contentMode="scaleToFill" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="Zo6-Gd-r9F" userLabel="Text">
-                        <rect key="frame" x="8" y="55" width="406" height="75"/>
+                        <rect key="frame" x="16" y="55" width="374" height="75"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="Event Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jAF-1a-wmr" userLabel="Event Title">
-                                <rect key="frame" x="0.0" y="0.0" width="406" height="33"/>
+                                <rect key="frame" x="0.0" y="0.0" width="374" height="33"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="November 2015" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nHW-q5-Oxm">
-                                <rect key="frame" x="0.0" y="33" width="406" height="17"/>
+                                <rect key="frame" x="0.0" y="33" width="374" height="17"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="Ongoing Story" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xxA-j6-xNG">
-                                <rect key="frame" x="0.0" y="58" width="406" height="17"/>
+                                <rect key="frame" x="0.0" y="58" width="374" height="17"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -66,10 +66,10 @@
                 <constraints>
                     <constraint firstItem="Lka-4U-tqL" firstAttribute="leading" secondItem="L8S-Vn-uxb" secondAttribute="leadingMargin" constant="-8" id="4sa-zQ-7vL"/>
                     <constraint firstAttribute="trailingMargin" secondItem="Lka-4U-tqL" secondAttribute="trailing" constant="-8" id="Odg-qS-NHS"/>
-                    <constraint firstItem="Zo6-Gd-r9F" firstAttribute="leading" secondItem="L8S-Vn-uxb" secondAttribute="leadingMargin" id="bnD-z5-9az"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Zo6-Gd-r9F" secondAttribute="trailing" constant="8" id="Sf1-j8-Ls1"/>
+                    <constraint firstItem="Zo6-Gd-r9F" firstAttribute="leading" secondItem="L8S-Vn-uxb" secondAttribute="leadingMargin" constant="8" id="bnD-z5-9az"/>
                     <constraint firstItem="Lka-4U-tqL" firstAttribute="top" secondItem="L8S-Vn-uxb" secondAttribute="topMargin" constant="-8" id="g3z-r4-Log"/>
                     <constraint firstAttribute="bottomMargin" secondItem="Zo6-Gd-r9F" secondAttribute="bottom" id="jsX-zO-G8x"/>
-                    <constraint firstItem="Zo6-Gd-r9F" firstAttribute="width" secondItem="L8S-Vn-uxb" secondAttribute="width" id="ygr-JS-dOu"/>
                 </constraints>
             </tableViewCellContentView>
             <animations/>
