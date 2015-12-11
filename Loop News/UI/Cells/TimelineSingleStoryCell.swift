@@ -34,7 +34,8 @@ class TimelineSingleStoryCell: UITableViewCell {
         super.layoutSubviews()
         
         let circleView = self.viewWithTag(TimelineSingleStoryCell.CIRCLE_VIEW_TAG)!
-        circleView.layer.cornerRadius = circleView.layer.frame.width
+        
+        circleView.layer.cornerRadius = circleView.layer.frame.width / 2
     }
 
     /**
