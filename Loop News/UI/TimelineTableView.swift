@@ -87,12 +87,19 @@ class TimelineTableView: UITableView, UITableViewDataSource {
             
             return cell
         } else {
-            let cell = self.dequeueReusableCellWithIdentifier("TimelineSingleStoryCell") as! TimelineSingleStoryCell
+            let story = self.stories[indexPath.row - 1]
             
-            cell.setStoryTitle(self.stories[indexPath.row - 1].title)
-            cell.setStoryDate(self.stories[indexPath.row - 1].date)
-            
-            return cell
+            switch story.type {
+            case "link":
+                let cell = self.dequeueReusableCellWithIdentifier("TimelineSingleStoryCell") as! TimelineSingleStoryCell
+                
+                cell.setStoryTitle(self.stories[indexPath.row - 1].title)
+                cell.setStoryDate(self.stories[indexPath.row - 1].date)
+                
+                return cell
+            default:
+                return UITableViewCell()
+            }
         }
     }
 }
