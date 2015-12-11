@@ -25,6 +25,11 @@ class TimelineSingleStoryCell: UITableViewCell {
      */
     static let DATE_LABEL_TAG = 20;
     
+    /**
+     * Label for the date inside of the circle
+     */
+    @IBOutlet weak var circleDateLabel: UILabel!
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         
@@ -48,5 +53,6 @@ class TimelineSingleStoryCell: UITableViewCell {
         let dateLabelView = self.viewWithTag(TimelineSingleStoryCell.DATE_LABEL_TAG) as! UILabel
         
         dateLabelView.text = date.relativeTimeToString()
+        self.circleDateLabel.text = date.toString(format: .Custom("MMM d"))
     }
 }

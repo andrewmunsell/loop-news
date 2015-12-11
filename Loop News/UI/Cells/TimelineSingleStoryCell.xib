@@ -89,6 +89,9 @@
                 </constraints>
             </tableViewCellContentView>
             <animations/>
+            <connections>
+                <outlet property="circleDateLabel" destination="JfN-dG-s7o" id="Acx-c3-sty"/>
+            </connections>
             <point key="canvasLocation" x="250" y="228.5"/>
         </tableViewCell>
     </objects>
