@@ -16,6 +16,8 @@ class Event: PFObject, PFSubclassing {
     
     @NSManaged var headerImage: String?
     
+    @NSManaged var coordinates: PFGeoPoint
+    
     /**
      * Get the name of the Parse class name
      */
