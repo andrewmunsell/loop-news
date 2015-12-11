@@ -24,10 +24,12 @@ class TimelineViewController: UIViewController {
         
         // Setup pull to refresh
         let refreshControl = UIRefreshControl()
+        
         refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
         refreshControl.addTarget(self, action: "refresh", forControlEvents: .ValueChanged)
         
         self.timelineTable.addSubview(refreshControl)
+        self.timelineTable.refreshControl = refreshControl
         
         // Now, load the data
         self.refresh()
@@ -38,7 +40,7 @@ class TimelineViewController: UIViewController {
      */
     func refresh() {
         // Ensure we don't continue if the event isn't set yet
-        if event == nil {
+        if self.event == nil {
             return
         }
         
@@ -47,6 +49,9 @@ class TimelineViewController: UIViewController {
                 self.timelineTable.stories = stories!
                 
                 self.timelineTable.reloadData()
+                self.timelineTable.setNeedsDisplay()
+                
+                self.timelineTable.refreshControl?.endRefreshing()
             }
         }
     }
