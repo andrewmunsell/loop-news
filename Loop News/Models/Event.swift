@@ -13,7 +13,7 @@ class Event: PFObject, PFSubclassing {
     @NSManaged var desc: String
     
     @NSManaged var date: NSDate
-    
+    @NSManaged var location: PFGeoPoint
     @NSManaged var headerImage: String?
     
     /**
