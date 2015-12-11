@@ -82,6 +82,9 @@ class TimelineTableView: UITableView {
                 cell.eventImageView.backgroundColor = UIColor.darkGrayColor()
             }
             
+            // Ensure the header cannot be selected
+            cell.selectionStyle = .None
+            
             return cell
         } else {
             let cell = self.dequeueReusableCellWithIdentifier("TimelineSingleStoryCell") as! TimelineSingleStoryCell
