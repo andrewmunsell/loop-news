@@ -6,7 +6,9 @@
 //  Copyright © 2015 Loop News. All rights reserved.
 //
 
-class TimelineViewController: UIViewController {
+import SafariServices
+
+class TimelineViewController: UIViewController, UITableViewDelegate {
     
     @IBOutlet weak var timelineTable: TimelineTableView!
     
@@ -16,6 +18,9 @@ class TimelineViewController: UIViewController {
     var event: Event?
     
     override func viewDidLoad() {
+        // Set this view controller as the delegate for the table
+        self.timelineTable.delegate = self
+        
         // Set the event for the timeline table
         self.timelineTable.event = event
         
@@ -33,6 +38,30 @@ class TimelineViewController: UIViewController {
         
         // Now, load the data
         self.refresh()
+    }
+    
+    /**
+     * Handle tapping a story
+     */
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        // Ignore the header being tapped
+        if indexPath.row == 0 {
+            return
+        }
+        
+        let story = self.timelineTable.stories[indexPath.row - 1]
+        
+        // De-select the row before we show the link
+        self.timelineTable.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        switch story.type {
+        case "link":
+            let safariViewController = SFSafariViewController(URL: NSURL(string: story.url)!)
+            
+            self.presentViewController(safariViewController, animated: true, completion: nil)
+        default:
+            break
+        }
     }
     
     /**
