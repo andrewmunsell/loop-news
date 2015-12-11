@@ -16,6 +16,15 @@ class TimelineHeaderCell: UITableViewCell {
     @IBOutlet weak var eventOngoingLabel: UILabel!
     
     /**
+     * Ensure the image is scaled to fill based on the aspect ratio
+     */
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        self.eventImageView.contentMode = .ScaleAspectFill
+    }
+    
+    /**
      * Set the image for the header, cross fading from whatever used to be in the image view
      */
     func setEventImage(image: UIImage) {
