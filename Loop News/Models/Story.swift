@@ -10,8 +10,12 @@ import Parse
 
 class Story: PFObject, PFSubclassing {
     @NSManaged var title: String
-    @NSManaged var url: String
     @NSManaged var date: NSDate
+    
+    @NSManaged var url: String
+    
+    @NSManaged var type: String
+    
     @NSManaged var event: Event
     
     /**
