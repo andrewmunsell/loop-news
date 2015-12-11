@@ -86,8 +86,8 @@ class TimelineTableView: UITableView {
         } else {
             let cell = self.dequeueReusableCellWithIdentifier("TimelineSingleStoryCell") as! TimelineSingleStoryCell
             
-            cell.setStoryTitle(self.stories[indexPath.row].title)
-            cell.setStoryDate(self.stories[indexPath.row].date)
+            cell.setStoryTitle(self.stories[indexPath.row - 1].title)
+            cell.setStoryDate(self.stories[indexPath.row - 1].date)
             
             return cell
         }
