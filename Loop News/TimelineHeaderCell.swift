@@ -15,6 +15,8 @@ class TimelineHeaderCell: UITableViewCell {
     @IBOutlet weak var eventDateLabel: UILabel!
     @IBOutlet weak var eventOngoingLabel: UILabel!
     
+    @IBOutlet weak var followButton: UIButton!
+    
     /**
      * Ensure the image is scaled to fill based on the aspect ratio
      */
@@ -22,6 +24,10 @@ class TimelineHeaderCell: UITableViewCell {
         super.layoutSubviews()
         
         self.eventImageView.contentMode = .ScaleAspectFill
+        
+        self.followButton.layer.borderColor = UIColor.whiteColor().CGColor
+        self.followButton.layer.borderWidth = 1.0
+        self.followButton.layer.cornerRadius = 5.0
     }
     
     /**
@@ -49,10 +55,13 @@ class TimelineHeaderCell: UITableViewCell {
      * Set whether the event is ongoing
      */
     func setIsOngoing(ongoing: Bool) {
-        if ongoing {
-            self.eventOngoingLabel.hidden = false
-        } else {
-            self.eventOngoingLabel.hidden = true
-        }
+        self.eventOngoingLabel.hidden = !ongoing
+    }
+    
+    /**
+     * Set whether the event has already been followed
+     */
+    func setIsFollowed(followed: Bool) {
+        self.followButton.setTitle(followed ? "Unfollow" : "Follow", forState: .Normal)
     }
 }
