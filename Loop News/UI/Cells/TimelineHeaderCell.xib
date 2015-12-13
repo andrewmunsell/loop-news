@@ -84,6 +84,9 @@
                         <state key="highlighted">
                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
+                        <connections>
+                            <action selector="followButtonTapped:" destination="fSB-nd-mfA" eventType="touchUpInside" id="QSX-eU-Rh2"/>
+                        </connections>
                     </button>
                 </subviews>
                 <animations/>
