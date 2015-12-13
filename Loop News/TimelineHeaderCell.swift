@@ -25,6 +25,9 @@ class TimelineHeaderCell: UITableViewCell {
         
         self.eventImageView.contentMode = .ScaleAspectFill
         
+        self.followButton.setBackgroundColor(UIColor.whiteColor(), forState: .Highlighted)
+        
+        self.followButton.layer.masksToBounds = true
         self.followButton.layer.borderColor = UIColor.whiteColor().CGColor
         self.followButton.layer.borderWidth = 1.0
         self.followButton.layer.cornerRadius = 5.0

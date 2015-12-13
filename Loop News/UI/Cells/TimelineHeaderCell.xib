@@ -81,6 +81,9 @@
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <state key="normal" title="Follow"/>
+                        <state key="highlighted">
+                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
                     </button>
                 </subviews>
                 <animations/>
