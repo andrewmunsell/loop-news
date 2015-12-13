@@ -16,7 +16,10 @@ class TimelineHeaderCell: UITableViewCell {
     @IBOutlet weak var eventDateLabel: UILabel!
     @IBOutlet weak var eventOngoingLabel: UILabel!
     
+    @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var followButton: UIButton!
+    
+    var delegate: TimelineHeaderCellDelegate?
     
     private var event: Event?
     private var subscription: Subscription?
@@ -35,6 +38,13 @@ class TimelineHeaderCell: UITableViewCell {
         self.followButton.layer.borderColor = UIColor.whiteColor().CGColor
         self.followButton.layer.borderWidth = 1.0
         self.followButton.layer.cornerRadius = 5.0
+    }
+    
+    /**
+     * Handle the close button being tapped
+     */
+    @IBAction func closeButtonTapped(sender: UIButton) {
+        self.delegate?.closeButtonPressed()
     }
     
     /**

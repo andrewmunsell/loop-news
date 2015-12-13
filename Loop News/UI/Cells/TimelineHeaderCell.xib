@@ -88,6 +88,15 @@
                             <action selector="followButtonTapped:" destination="fSB-nd-mfA" eventType="touchUpInside" id="QSX-eU-Rh2"/>
                         </connections>
                     </button>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hlh-0t-GF2">
+                        <rect key="frame" x="8" y="8" width="30" height="30"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                        <state key="normal" title="×"/>
+                        <connections>
+                            <action selector="closeButtonTapped:" destination="fSB-nd-mfA" eventType="touchUpInside" id="lug-V7-ztC"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <animations/>
                 <constraints>
@@ -105,6 +114,7 @@
             </tableViewCellContentView>
             <animations/>
             <connections>
+                <outlet property="closeButton" destination="hlh-0t-GF2" id="XTc-DR-HNB"/>
                 <outlet property="eventDateLabel" destination="nHW-q5-Oxm" id="dEd-Tj-qoN"/>
                 <outlet property="eventImageView" destination="Lka-4U-tqL" id="sZD-tp-uDe"/>
                 <outlet property="eventOngoingLabel" destination="xxA-j6-xNG" id="qSf-sm-eJe"/>
