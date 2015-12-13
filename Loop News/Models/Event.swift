@@ -13,6 +13,7 @@ class Event: PFObject, PFSubclassing {
     @NSManaged var desc: String
     
     @NSManaged var date: NSDate
+    @NSManaged var ongoing: Bool
     
     @NSManaged var headerImage: String?
     
