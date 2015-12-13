@@ -19,6 +19,11 @@ class TimelineTableView: UITableView, UITableViewDataSource {
      */
     var stories: [Story] = []
     
+    /**
+     * Delegate to assign to the timeline header cell
+     */
+    var timelineHeaderCellDelegate: TimelineHeaderCellDelegate?
+    
     private var headerCellNib = UINib(nibName: "TimelineHeaderCell", bundle: NSBundle.mainBundle())
     private var singleStoryCellNib = UINib(nibName: "TimelineSingleStoryCell", bundle: NSBundle.mainBundle())
     
@@ -63,6 +68,7 @@ class TimelineTableView: UITableView, UITableViewDataSource {
             let cell = self.dequeueReusableCellWithIdentifier("TimelineHeaderCell") as! TimelineHeaderCell
             
             cell.setEvent(self.event!)
+            cell.delegate = self.timelineHeaderCellDelegate
             
             // Ensure the header cannot be selected
             cell.selectionStyle = .None
