@@ -30,12 +30,19 @@ class TimelineSingleStoryCell: UITableViewCell {
      */
     @IBOutlet weak var circleDateLabel: UILabel!
     
+    /**
+     * View that represents the vertical line in the timeline
+     */
+    @IBOutlet weak var timelineLineView: UIView!
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         
         let circleView = self.viewWithTag(TimelineSingleStoryCell.CIRCLE_VIEW_TAG)!
         
         circleView.layer.cornerRadius = circleView.layer.frame.width / 2
+        circleView.layer.masksToBounds = true
+        circleView.clipsToBounds = true
     }
 
     /**
@@ -55,5 +62,22 @@ class TimelineSingleStoryCell: UITableViewCell {
         
         dateLabelView.text = date.relativeTimeToString()
         self.circleDateLabel.text = date.toString(format: .Custom("MMM d"))
+    }
+    
+    /**
+     * Set whether this story is the last story in the event
+     */
+    func setIsLastStory(lastStory: Bool) {
+        if !lastStory {
+            self.timelineLineView.layer.mask = nil
+        } else {
+            let maskGradient = CAGradientLayer()
+            
+            maskGradient.frame = (self.timelineLineView.superview?.frame)!
+            maskGradient.colors = [UIColor.blackColor().CGColor, UIColor.clearColor().CGColor]
+            maskGradient.locations = [0.2, 1.0]
+            
+            self.timelineLineView.layer.mask = maskGradient
+        }
     }
 }

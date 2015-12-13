@@ -96,6 +96,8 @@ class TimelineTableView: UITableView, UITableViewDataSource {
                 cell.setStoryTitle(self.stories[indexPath.row - 1].title)
                 cell.setStoryDate(self.stories[indexPath.row - 1].date)
                 
+                cell.setIsLastStory(indexPath.row == self.stories.count)
+                
                 return cell
             default:
                 return UITableViewCell()
