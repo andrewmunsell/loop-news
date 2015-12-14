@@ -13,6 +13,10 @@ class DiscoverViewController: UIViewController, UITableViewDelegate {
     
     private var selectedEvent : Event?
 
+    override func viewWillAppear(animated: Bool) {
+        refresh()
+    }
+    
     override func viewDidLoad() {
         // Set this view controller as the delegate for the table
         self.discoverTable.delegate = self
@@ -43,7 +47,7 @@ class DiscoverViewController: UIViewController, UITableViewDelegate {
      */
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-        selectedEvent = self.discoverTable.events[indexPath.row - 1]
+        selectedEvent = self.discoverTable.events[indexPath.row]
         
         // De-select the row before we show the link
         self.discoverTable.deselectRowAtIndexPath(indexPath, animated: true)
@@ -55,8 +59,6 @@ class DiscoverViewController: UIViewController, UITableViewDelegate {
        Event.all() { (events: [Event]?, err: NSError?) -> Void in
             if events != nil {
                 self.discoverTable.events = events!
-                print(self.discoverTable.events)
-                
                 self.discoverTable.reloadData()
                 self.discoverTable.setNeedsDisplay()
                 self.discoverTable.refreshControl?.endRefreshing()
@@ -65,7 +67,7 @@ class DiscoverViewController: UIViewController, UITableViewDelegate {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier! == "ShowTimeline" {
+        if segue.identifier != nil && segue.identifier! == "ShowTimeline" {
             let destinationVC = segue.destinationViewController as! TimelineViewController
             destinationVC.event = self.selectedEvent
         }

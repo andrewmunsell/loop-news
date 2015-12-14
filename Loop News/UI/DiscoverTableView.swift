@@ -27,12 +27,15 @@ class DiscoverTableView: UITableView, UITableViewDataSource {
         self.estimatedRowHeight = 50
         self.rowHeight = UITableViewAutomaticDimension
         
-        // Register the cell nibs
+        // Register the cell nib
         self.registerNib(self.eventCellNib, forCellReuseIdentifier: "DiscoverEventCell")
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        
+        self.separatorColor = UIColor.clearColor()
+        self.separatorStyle = .None
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -41,8 +44,23 @@ class DiscoverTableView: UITableView, UITableViewDataSource {
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = self.dequeueReusableCellWithIdentifier("DiscoverEventCell") as! DiscoverEventCell
-        cell.setEventTitle(self.events[indexPath.row - 1].title)
-        cell.setEventDate(self.events[indexPath.row - 1].date)
+        let event = self.events[indexPath.row]
+        cell.setEventTitle(event.title)
+        cell.setEventDate(event.date)
+        if event.headerImage != nil {
+            dispatch_async(GlobalBackgroundQueue, { () -> Void in
+                let url = NSURL(string: event.headerImage!)!
+                let data = NSData(contentsOfURL: url)!
+                
+                let headerImage: UIImage = UIImage(data: data)!
+                
+                dispatch_async(GlobalMainQueue, { () -> Void in
+                    cell.setEventImage(headerImage)
+                })
+            })
+        } else {
+            cell.eventImageView.backgroundColor = UIColor.darkGrayColor()
+        }
         
         return cell
     }
