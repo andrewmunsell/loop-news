@@ -6,7 +6,9 @@
 //  Copyright © 2015 Loop News. All rights reserved.
 //
 
-class TimelineViewController: UIViewController {
+import SafariServices
+
+class TimelineViewController: UIViewController, UITableViewDelegate, TimelineHeaderCellDelegate {
     
     @IBOutlet weak var timelineTable: TimelineTableView!
     
@@ -16,6 +18,10 @@ class TimelineViewController: UIViewController {
     var event: Event?
     
     override func viewDidLoad() {
+        // Set this view controller as the delegate for the table
+        self.timelineTable.delegate = self
+        self.timelineTable.timelineHeaderCellDelegate = self
+        
         // Set the event for the timeline table
         self.timelineTable.event = event
         
@@ -24,13 +30,47 @@ class TimelineViewController: UIViewController {
         
         // Setup pull to refresh
         let refreshControl = UIRefreshControl()
+        
         refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
         refreshControl.addTarget(self, action: "refresh", forControlEvents: .ValueChanged)
         
         self.timelineTable.addSubview(refreshControl)
+        self.timelineTable.refreshControl = refreshControl
         
         // Now, load the data
         self.refresh()
+    }
+    
+    /**
+     * Handle tapping a story
+     */
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        // Ignore the header being tapped
+        if indexPath.row == 0 {
+            return
+        }
+        
+        let story = self.timelineTable.stories[indexPath.row - 1]
+        
+        // De-select the row before we show the link
+        self.timelineTable.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        switch story.type {
+        case "link":
+            let safariViewController = SFSafariViewController(URL: NSURL(string: story.url)!)
+            
+            self.presentViewController(safariViewController, animated: true, completion: nil)
+        default:
+            break
+        }
+    }
+    
+    /**
+     * Handle the close button being pressed in the timeline header cell
+     */
+    func closeButtonPressed() {
+        self.navigationController?.popViewControllerAnimated(true)
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     /**
@@ -38,7 +78,7 @@ class TimelineViewController: UIViewController {
      */
     func refresh() {
         // Ensure we don't continue if the event isn't set yet
-        if event == nil {
+        if self.event == nil {
             return
         }
         
@@ -47,6 +87,9 @@ class TimelineViewController: UIViewController {
                 self.timelineTable.stories = stories!
                 
                 self.timelineTable.reloadData()
+                self.timelineTable.setNeedsDisplay()
+                
+                self.timelineTable.refreshControl?.endRefreshing()
             }
         }
     }

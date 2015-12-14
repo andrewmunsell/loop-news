@@ -10,6 +10,9 @@
 		4931409A1C113BFD00F63243 /* LoopNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493140991C113BFD00F63243 /* LoopNews.swift */; };
 		4931409E1C113CD000F63243 /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4931409D1C113CD000F63243 /* Story.swift */; };
 		493140A21C113D7900F63243 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493140A11C113D7900F63243 /* Event.swift */; };
+		49771F961C1E04EB0056597F /* UIButton+setBackgroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49771F951C1E04EB0056597F /* UIButton+setBackgroundColor.swift */; };
+		49771F981C1E0B7E0056597F /* TimelineHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49771F971C1E0B7E0056597F /* TimelineHeaderCell.swift */; };
+		49771F9A1C1E0C790056597F /* TimelineHeaderCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49771F991C1E0C790056597F /* TimelineHeaderCellDelegate.swift */; };
 		49C5C57B1C112A1C0075FFD5 /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C5C57A1C112A1C0075FFD5 /* DiscoverViewController.swift */; };
 		49C5C57D1C112A310075FFD5 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C5C57C1C112A310075FFD5 /* SettingsViewController.swift */; };
 		49C5C57F1C112A430075FFD5 /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C5C57E1C112A430075FFD5 /* TimelineViewController.swift */; };
@@ -26,7 +29,6 @@
 		49EF79D41C193954001D6BBA /* TimelineSingleStoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EF79D21C193954001D6BBA /* TimelineSingleStoryCell.swift */; };
 		49EF79D51C193954001D6BBA /* TimelineSingleStoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49EF79D31C193954001D6BBA /* TimelineSingleStoryCell.xib */; };
 		49EF79D71C193F57001D6BBA /* TimelineHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49EF79D61C193F57001D6BBA /* TimelineHeaderCell.xib */; };
-		49EF79D91C1943DB001D6BBA /* TimelineHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EF79D81C1943DB001D6BBA /* TimelineHeaderCell.swift */; };
 		49EF79DB1C1947FE001D6BBA /* GCDHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EF79DA1C1947FE001D6BBA /* GCDHelper.swift */; };
 		8E527AB943E8D6AA6397CE0E /* Pods_Loop_News.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B697700AF4F87065BB703FB3 /* Pods_Loop_News.framework */; };
 /* End PBXBuildFile section */
@@ -53,6 +55,9 @@
 		493140991C113BFD00F63243 /* LoopNews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoopNews.swift; path = Libraries/LoopNews.swift; sourceTree = "<group>"; };
 		4931409D1C113CD000F63243 /* Story.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Story.swift; path = Models/Story.swift; sourceTree = "<group>"; };
 		493140A11C113D7900F63243 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Event.swift; path = Models/Event.swift; sourceTree = "<group>"; };
+		49771F951C1E04EB0056597F /* UIButton+setBackgroundColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIButton+setBackgroundColor.swift"; path = "Extensions/UIButton+setBackgroundColor.swift"; sourceTree = "<group>"; };
+		49771F971C1E0B7E0056597F /* TimelineHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimelineHeaderCell.swift; path = UI/Cells/TimelineHeaderCell.swift; sourceTree = "<group>"; };
+		49771F991C1E0C790056597F /* TimelineHeaderCellDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimelineHeaderCellDelegate.swift; path = Protocols/TimelineHeaderCellDelegate.swift; sourceTree = "<group>"; };
 		49C5C5761C1127E30075FFD5 /* Loop News-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Loop News-Bridging-Header.h"; sourceTree = "<group>"; };
 		49C5C57A1C112A1C0075FFD5 /* DiscoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DiscoverViewController.swift; path = Controllers/DiscoverViewController.swift; sourceTree = "<group>"; };
 		49C5C57C1C112A310075FFD5 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = Controllers/SettingsViewController.swift; sourceTree = "<group>"; };
@@ -76,7 +81,6 @@
 		49EF79D21C193954001D6BBA /* TimelineSingleStoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimelineSingleStoryCell.swift; path = UI/Cells/TimelineSingleStoryCell.swift; sourceTree = "<group>"; };
 		49EF79D31C193954001D6BBA /* TimelineSingleStoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TimelineSingleStoryCell.xib; path = UI/Cells/TimelineSingleStoryCell.xib; sourceTree = "<group>"; };
 		49EF79D61C193F57001D6BBA /* TimelineHeaderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TimelineHeaderCell.xib; path = UI/Cells/TimelineHeaderCell.xib; sourceTree = "<group>"; };
-		49EF79D81C1943DB001D6BBA /* TimelineHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineHeaderCell.swift; sourceTree = "<group>"; };
 		49EF79DA1C1947FE001D6BBA /* GCDHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GCDHelper.swift; path = Libraries/GCDHelper.swift; sourceTree = "<group>"; };
 		54D68648D9EF28812D193506 /* Pods-Loop News.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Loop News.release.xcconfig"; path = "Pods/Target Support Files/Pods-Loop News/Pods-Loop News.release.xcconfig"; sourceTree = "<group>"; };
 		B697700AF4F87065BB703FB3 /* Pods_Loop_News.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Loop_News.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -126,6 +130,14 @@
 			name = Libraries;
 			sourceTree = "<group>";
 		};
+		49771F941C1E04CF0056597F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				49771F951C1E04EB0056597F /* UIButton+setBackgroundColor.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
 		49C5C5741C11265A0075FFD5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +171,7 @@
 		49C5C5791C11299F0075FFD5 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				49771F991C1E0C790056597F /* TimelineHeaderCellDelegate.swift */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -190,6 +203,7 @@
 			children = (
 				493140981C113BEC00F63243 /* Libraries */,
 				49C5C5791C11299F0075FFD5 /* Protocols */,
+				49771F941C1E04CF0056597F /* Extensions */,
 				49C5C5771C1129950075FFD5 /* Controllers */,
 				49C5C5781C11299A0075FFD5 /* Models */,
 				493140971C11390B00F63243 /* UI */,
@@ -226,7 +240,7 @@
 			children = (
 				49EF79D21C193954001D6BBA /* TimelineSingleStoryCell.swift */,
 				49EF79D31C193954001D6BBA /* TimelineSingleStoryCell.xib */,
-				49EF79D81C1943DB001D6BBA /* TimelineHeaderCell.swift */,
+				49771F971C1E0B7E0056597F /* TimelineHeaderCell.swift */,
 				49EF79D61C193F57001D6BBA /* TimelineHeaderCell.xib */,
 			);
 			name = Cells;
@@ -437,14 +451,16 @@
 				4931409A1C113BFD00F63243 /* LoopNews.swift in Sources */,
 				493140A21C113D7900F63243 /* Event.swift in Sources */,
 				49C5C57B1C112A1C0075FFD5 /* DiscoverViewController.swift in Sources */,
-				49EF79D91C1943DB001D6BBA /* TimelineHeaderCell.swift in Sources */,
 				49C5C5831C1131BB0075FFD5 /* MapViewController.swift in Sources */,
 				49EF79CA1C192032001D6BBA /* Subscription.swift in Sources */,
 				49EF79DB1C1947FE001D6BBA /* GCDHelper.swift in Sources */,
 				49D3A2B71C055A3900F2D249 /* AppDelegate.swift in Sources */,
 				49EF79D41C193954001D6BBA /* TimelineSingleStoryCell.swift in Sources */,
 				49C5C57D1C112A310075FFD5 /* SettingsViewController.swift in Sources */,
+				49771F961C1E04EB0056597F /* UIButton+setBackgroundColor.swift in Sources */,
+				49771F981C1E0B7E0056597F /* TimelineHeaderCell.swift in Sources */,
 				49C5C57F1C112A430075FFD5 /* TimelineViewController.swift in Sources */,
+				49771F9A1C1E0C790056597F /* TimelineHeaderCellDelegate.swift in Sources */,
 				49EF79D11C1938F4001D6BBA /* TimelineTableView.swift in Sources */,
 				49C5C5811C112ABD0075FFD5 /* SearchResultsViewController.swift in Sources */,
 				4931409E1C113CD000F63243 /* Story.swift in Sources */,

@@ -8,14 +8,14 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TimelineSingleStoryCell" rowHeight="119" id="e3a-As-Ujz" customClass="TimelineSingleStoryCell" customModule="Loop_News" customModuleProvider="target">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TimelineSingleStoryCell" rowHeight="120" id="e3a-As-Ujz" customClass="TimelineSingleStoryCell" customModule="Loop_News" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="422" height="119"/>
             <autoresizingMask key="autoresizingMask"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="e3a-As-Ujz" id="hAv-fj-AAN">
-                <rect key="frame" x="0.0" y="0.0" width="422" height="118"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" placeholderIntrinsicWidth="422" placeholderIntrinsicHeight="infinite" tableViewCell="e3a-As-Ujz" id="hAv-fj-AAN">
+                <rect key="frame" x="0.0" y="0.0" width="422" height="118.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eBv-Mn-Hzu" userLabel="Vertical Line">
+                    <view contentMode="scaleToFill" placeholderIntrinsicWidth="2" placeholderIntrinsicHeight="infinite" translatesAutoresizingMaskIntoConstraints="NO" id="eBv-Mn-Hzu" userLabel="Vertical Line">
                         <rect key="frame" x="46" y="0.0" width="2" height="118"/>
                         <animations/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -42,14 +42,14 @@
                     <view contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="1Q5-HG-Nsc" userLabel="Story">
                         <rect key="frame" x="96" y="36" width="318" height="46"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" tag="10" contentMode="left" verticalHuggingPriority="1000" text="Story title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OJp-jc-0Up" userLabel="Story Title">
+                            <label opaque="NO" userInteractionEnabled="NO" tag="10" contentMode="left" verticalHuggingPriority="1000" ambiguous="YES" text="Story title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OJp-jc-0Up" userLabel="Story Title">
                                 <rect key="frame" x="0.0" y="0.0" width="318" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" tag="20" contentMode="left" verticalHuggingPriority="1000" text="a day ago" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ee2-xm-pKH" userLabel="Story Date">
+                            <label opaque="NO" userInteractionEnabled="NO" tag="20" contentMode="left" verticalHuggingPriority="1000" ambiguous="YES" text="a day ago" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ee2-xm-pKH" userLabel="Story Date">
                                 <rect key="frame" x="0.0" y="29" width="318" height="17"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
@@ -77,16 +77,22 @@
                     <constraint firstItem="JfN-dG-s7o" firstAttribute="centerY" secondItem="NvR-T2-IAp" secondAttribute="centerY" id="6gc-uF-Qrh"/>
                     <constraint firstItem="eBv-Mn-Hzu" firstAttribute="top" secondItem="hAv-fj-AAN" secondAttribute="topMargin" constant="-8" id="ELj-WA-JlS"/>
                     <constraint firstItem="NvR-T2-IAp" firstAttribute="centerY" secondItem="hAv-fj-AAN" secondAttribute="centerY" id="HFo-sr-n0l"/>
+                    <constraint firstItem="1Q5-HG-Nsc" firstAttribute="top" secondItem="hAv-fj-AAN" secondAttribute="topMargin" constant="28" id="HR9-qe-yE5"/>
                     <constraint firstItem="eBv-Mn-Hzu" firstAttribute="centerX" secondItem="NvR-T2-IAp" secondAttribute="centerX" id="IhG-Sv-UYx"/>
                     <constraint firstItem="1Q5-HG-Nsc" firstAttribute="leading" secondItem="NvR-T2-IAp" secondAttribute="trailing" constant="24" id="KUf-mQ-xzS"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="eBv-Mn-Hzu" secondAttribute="bottom" constant="-8" id="MTh-gs-Ubv"/>
                     <constraint firstItem="NvR-T2-IAp" firstAttribute="leading" secondItem="hAv-fj-AAN" secondAttribute="leadingMargin" constant="14" id="N65-yb-w2O"/>
                     <constraint firstItem="JfN-dG-s7o" firstAttribute="height" secondItem="NvR-T2-IAp" secondAttribute="height" id="OQH-7y-fC6"/>
                     <constraint firstItem="JfN-dG-s7o" firstAttribute="width" secondItem="NvR-T2-IAp" secondAttribute="width" id="Tcs-yV-GLe"/>
-                    <constraint firstItem="eBv-Mn-Hzu" firstAttribute="height" secondItem="hAv-fj-AAN" secondAttribute="height" id="b0h-5O-lSB"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="1Q5-HG-Nsc" secondAttribute="bottom" constant="28" id="V9p-Vb-f5G"/>
                     <constraint firstItem="JfN-dG-s7o" firstAttribute="centerX" secondItem="NvR-T2-IAp" secondAttribute="centerX" id="xhE-w1-y2b"/>
                 </constraints>
             </tableViewCellContentView>
             <animations/>
+            <connections>
+                <outlet property="circleDateLabel" destination="JfN-dG-s7o" id="Acx-c3-sty"/>
+                <outlet property="timelineLineView" destination="eBv-Mn-Hzu" id="Alq-am-uan"/>
+            </connections>
             <point key="canvasLocation" x="250" y="228.5"/>
         </tableViewCell>
     </objects>
