@@ -67,8 +67,34 @@
                             <constraint firstItem="nHW-q5-Oxm" firstAttribute="trailing" secondItem="jAF-1a-wmr" secondAttribute="trailing" id="wXc-9w-5ga"/>
                         </constraints>
                     </view>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oeE-g0-w9J">
+                        <rect key="frame" x="316" y="14" width="74" height="30"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="fPn-th-eDF"/>
+                            <constraint firstAttribute="width" constant="74" id="rdE-gN-USj"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <state key="normal" title="Follow"/>
+                        <state key="highlighted">
+                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="followButtonTapped:" destination="fSB-nd-mfA" eventType="touchUpInside" id="QSX-eU-Rh2"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hlh-0t-GF2">
+                        <rect key="frame" x="8" y="8" width="30" height="30"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                        <state key="normal" title="×"/>
+                        <connections>
+                            <action selector="closeButtonTapped:" destination="fSB-nd-mfA" eventType="touchUpInside" id="lug-V7-ztC"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="trailingMargin" secondItem="oeE-g0-w9J" secondAttribute="trailing" constant="8" id="0I7-24-r5S"/>
                     <constraint firstAttribute="bottomMargin" secondItem="Lka-4U-tqL" secondAttribute="bottom" constant="-8" id="3VM-VJ-R3E"/>
                     <constraint firstItem="Lka-4U-tqL" firstAttribute="leading" secondItem="L8S-Vn-uxb" secondAttribute="leadingMargin" constant="-8" id="4sa-zQ-7vL"/>
                     <constraint firstAttribute="trailingMargin" secondItem="Lka-4U-tqL" secondAttribute="trailing" constant="-8" id="Odg-qS-NHS"/>
@@ -77,13 +103,16 @@
                     <constraint firstItem="Lka-4U-tqL" firstAttribute="top" secondItem="L8S-Vn-uxb" secondAttribute="topMargin" constant="-8" id="g3z-r4-Log"/>
                     <constraint firstItem="Zo6-Gd-r9F" firstAttribute="top" secondItem="L8S-Vn-uxb" secondAttribute="topMargin" constant="50" id="ioH-6S-frp"/>
                     <constraint firstAttribute="bottomMargin" secondItem="Zo6-Gd-r9F" secondAttribute="bottom" id="jsX-zO-G8x"/>
+                    <constraint firstItem="oeE-g0-w9J" firstAttribute="top" secondItem="L8S-Vn-uxb" secondAttribute="topMargin" constant="6" id="udJ-NP-4EC"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="closeButton" destination="hlh-0t-GF2" id="XTc-DR-HNB"/>
                 <outlet property="eventDateLabel" destination="nHW-q5-Oxm" id="dEd-Tj-qoN"/>
                 <outlet property="eventImageView" destination="Lka-4U-tqL" id="sZD-tp-uDe"/>
                 <outlet property="eventOngoingLabel" destination="xxA-j6-xNG" id="qSf-sm-eJe"/>
                 <outlet property="eventTitleLabel" destination="jAF-1a-wmr" id="jzI-hm-XHP"/>
+                <outlet property="followButton" destination="oeE-g0-w9J" id="LVa-aP-gII"/>
             </connections>
             <point key="canvasLocation" x="217" y="366.5"/>
         </tableViewCell>

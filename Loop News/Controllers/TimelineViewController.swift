@@ -8,7 +8,7 @@
 
 import SafariServices
 
-class TimelineViewController: UIViewController, UITableViewDelegate {
+class TimelineViewController: UIViewController, UITableViewDelegate, TimelineHeaderCellDelegate {
     
     @IBOutlet weak var timelineTable: TimelineTableView!
     
@@ -20,6 +20,7 @@ class TimelineViewController: UIViewController, UITableViewDelegate {
     override func viewDidLoad() {
         // Set this view controller as the delegate for the table
         self.timelineTable.delegate = self
+        self.timelineTable.timelineHeaderCellDelegate = self
         
         // Set the event for the timeline table
         self.timelineTable.event = event
@@ -62,6 +63,14 @@ class TimelineViewController: UIViewController, UITableViewDelegate {
         default:
             break
         }
+    }
+    
+    /**
+     * Handle the close button being pressed in the timeline header cell
+     */
+    func closeButtonPressed() {
+        self.navigationController?.popViewControllerAnimated(true)
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     /**

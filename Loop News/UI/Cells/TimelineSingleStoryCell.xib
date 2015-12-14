@@ -83,6 +83,7 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="circleDateLabel" destination="JfN-dG-s7o" id="Acx-c3-sty"/>
+                <outlet property="timelineLineView" destination="eBv-Mn-Hzu" id="Alq-am-uan"/>
             </connections>
             <point key="canvasLocation" x="250" y="228.5"/>
         </tableViewCell>
