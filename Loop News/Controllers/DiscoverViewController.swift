@@ -15,6 +15,7 @@ class DiscoverViewController: UIViewController, UITableViewDelegate {
 
     override func viewWillAppear(animated: Bool) {
         refresh()
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
     override func viewDidLoad() {
