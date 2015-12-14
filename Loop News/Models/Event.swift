@@ -11,11 +11,8 @@ import Parse
 class Event: PFObject, PFSubclassing {
     @NSManaged var title: String
     @NSManaged var desc: String
-    
     @NSManaged var date: NSDate
-    @NSManaged var location: PFGeoPoint
     @NSManaged var headerImage: String?
-    
     @NSManaged var coordinates: PFGeoPoint?
     
     /**
