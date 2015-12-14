@@ -11,9 +11,12 @@ import MapKit
 class MapViewController: UIViewController, MKMapViewDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
+    var selectedEvent : Event?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.mapView.delegate = self
         
         // rect used to bound all event annotations
         var zoomRect : MKMapRect = MKMapRectNull
@@ -30,13 +33,15 @@ class MapViewController: UIViewController, MKMapViewDelegate {
                     event.coordinates!.longitude
                 )
                 
-                // create map annotation point
-                let eventPin = MKPointAnnotation()
-                eventPin.coordinate = location
-                eventPin.title = event.title
-                eventPin.subtitle = event.desc
+                // create an EventAnnotation
+                let eventAnnotation = EventAnnotation(
+                    coordinate: location,
+                    title: event.title,
+                    subtitle: event.desc,
+                    event: event
+                )
                 
-                // create rect to bound new annotation
+                // create rect to bound new EventAnnotation
                 let point : MKMapPoint = MKMapPointForCoordinate(location);
                 let pointRect : MKMapRect = MKMapRectMake(point.x, point.y, 0.1, 0.1)
                 if (MKMapRectIsNull(zoomRect)) {
@@ -46,9 +51,9 @@ class MapViewController: UIViewController, MKMapViewDelegate {
                 }
                 
                 // add annotation to map
-                self.mapView.addAnnotation(eventPin)
+                self.mapView.addAnnotation(eventAnnotation)
                 
-                // change visible bounds on map to include new annotation
+                // change visible bounds on map to include new EventAnnotation
                 self.mapView.setVisibleMapRect(zoomRect, edgePadding: mapPadding, animated: false)
             }
         });
@@ -56,14 +61,31 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     
     func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
         let identifier = "pin"
-        var view: MKAnnotationView
-        if let pin = mapView.dequeueReusableAnnotationViewWithIdentifier(identifier) {
-            pin.annotation = annotation
-            view = pin
+        if let annotationView = mapView.dequeueReusableAnnotationViewWithIdentifier(identifier) {
+            annotationView.annotation = annotation
+            return annotationView
         } else {
-            view = MKAnnotationView(annotation: annotation, reuseIdentifier: identifier)
-            view.canShowCallout = true
+            let annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            annotationView.enabled = true
+            annotationView.canShowCallout = true
+            annotationView.rightCalloutAccessoryView = UIButton(type: .DetailDisclosure)
+            return annotationView
         }
-        return view
+    }
+    
+    func mapView(mapView: MKMapView, annotationView view: MKAnnotationView,
+        calloutAccessoryControlTapped control: UIControl) {
+            if control == view.rightCalloutAccessoryView {
+                let selectedAnnotation = view.annotation as! EventAnnotation
+                self.selectedEvent = selectedAnnotation.event;
+                self.performSegueWithIdentifier("MapToTimelineSegue", sender: nil)
+            }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier != nil && segue.identifier! == "MapToTimelineSegue" {
+            let destinationVC = segue.destinationViewController as! TimelineViewController
+            destinationVC.event = self.selectedEvent
+        }
     }
 }

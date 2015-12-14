@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2955E7521C1E8E70009DE824 /* EventAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2955E7511C1E8E70009DE824 /* EventAnnotation.swift */; };
 		4931409A1C113BFD00F63243 /* LoopNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493140991C113BFD00F63243 /* LoopNews.swift */; };
 		4931409E1C113CD000F63243 /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4931409D1C113CD000F63243 /* Story.swift */; };
 		493140A21C113D7900F63243 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493140A11C113D7900F63243 /* Event.swift */; };
@@ -55,6 +56,7 @@
 
 /* Begin PBXFileReference section */
 		2310F37F5A92C6C3DA297584 /* Pods-Loop News.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Loop News.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Loop News/Pods-Loop News.debug.xcconfig"; sourceTree = "<group>"; };
+		2955E7511C1E8E70009DE824 /* EventAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventAnnotation.swift; sourceTree = "<group>"; };
 		493140991C113BFD00F63243 /* LoopNews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoopNews.swift; path = Libraries/LoopNews.swift; sourceTree = "<group>"; };
 		4931409D1C113CD000F63243 /* Story.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Story.swift; path = Models/Story.swift; sourceTree = "<group>"; };
 		493140A11C113D7900F63243 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Event.swift; path = Models/Event.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 				49EF79CF1C1938E4001D6BBA /* Cells */,
 				49EF79D01C1938F4001D6BBA /* TimelineTableView.swift */,
 				A81C458C1C1CCD63004DA81F /* DiscoverTableView.swift */,
+				2955E7511C1E8E70009DE824 /* EventAnnotation.swift */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -458,11 +461,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2955E7521C1E8E70009DE824 /* EventAnnotation.swift in Sources */,
 				4931409A1C113BFD00F63243 /* LoopNews.swift in Sources */,
 				493140A21C113D7900F63243 /* Event.swift in Sources */,
 				49C5C57B1C112A1C0075FFD5 /* DiscoverViewController.swift in Sources */,
 				A81C45901C1CD0AB004DA81F /* DiscoverEventCell.swift in Sources */,
-				49EF79D91C1943DB001D6BBA /* TimelineHeaderCell.swift in Sources */,
 				A81C458D1C1CCD63004DA81F /* DiscoverTableView.swift in Sources */,
 				49C5C5831C1131BB0075FFD5 /* MapViewController.swift in Sources */,
 				49EF79CA1C192032001D6BBA /* Subscription.swift in Sources */,
