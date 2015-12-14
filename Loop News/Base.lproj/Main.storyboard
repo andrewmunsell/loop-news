@@ -36,11 +36,25 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="125" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jeM-fc-7R9" userLabel="Discover Table" customClass="DiscoverTableView" customModule="Loop_News" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="jeM-fc-7R9" secondAttribute="trailing" constant="-20" id="0qN-Wc-X2r"/>
+                            <constraint firstItem="jeM-fc-7R9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="2pM-SR-smf"/>
+                            <constraint firstItem="jeM-fc-7R9" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-64" id="ObF-kH-14q"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="jeM-fc-7R9" secondAttribute="bottom" id="Ytb-ux-whU"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Loop" id="RW4-0A-W7h"/>
                     <connections>
+                        <outlet property="discoverTable" destination="jeM-fc-7R9" id="GJA-Qn-uez"/>
                         <outlet property="navigationItem" destination="RW4-0A-W7h" id="TaP-zt-HSj"/>
                         <outlet property="titleBar" destination="RW4-0A-W7h" id="xmp-jc-5IX"/>
                         <segue destination="qJk-qN-tRp" kind="show" identifier="ShowTimeline" id="xFR-3K-L5a"/>

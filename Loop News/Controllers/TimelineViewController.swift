@@ -71,6 +71,7 @@ class TimelineViewController: UIViewController, UITableViewDelegate, TimelineHea
     func closeButtonPressed() {
         self.navigationController?.popViewControllerAnimated(true)
         self.dismissViewControllerAnimated(true, completion: nil)
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
     }
     
     /**
