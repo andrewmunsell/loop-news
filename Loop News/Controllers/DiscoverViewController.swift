@@ -12,11 +12,6 @@ class DiscoverViewController: UIViewController, UITableViewDelegate {
     @IBOutlet weak var discoverTable: DiscoverTableView!
     
     private var selectedEvent : Event?
-
-    override func viewWillAppear(animated: Bool) {
-        refresh()
-        self.navigationController?.setNavigationBarHidden(false, animated: true)
-    }
     
     override func viewDidLoad() {
         // Set this view controller as the delegate for the table
@@ -33,6 +28,10 @@ class DiscoverViewController: UIViewController, UITableViewDelegate {
         
         self.discoverTable.addSubview(refreshControl)
         self.discoverTable.refreshControl = refreshControl
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        self.refresh()
     }
     
     func showMap(sender: AnyObject?) {

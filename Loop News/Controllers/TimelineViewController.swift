@@ -41,6 +41,11 @@ class TimelineViewController: UIViewController, UITableViewDelegate, TimelineHea
         self.refresh()
     }
     
+    override func viewWillDisappear(animated: Bool) {
+        // Re-show the navigation bar when this video is disappearing
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    
     /**
      * Handle tapping a story
      */
