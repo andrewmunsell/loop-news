@@ -24,8 +24,8 @@ class DiscoverTableView: UITableView, UITableViewDataSource {
         self.dataSource = self
         
         // Setup the auto-height
-        self.estimatedRowHeight = 50
-        self.rowHeight = UITableViewAutomaticDimension
+        self.estimatedRowHeight = 120.0
+        self.rowHeight = 120.0
         
         // Register the cell nib
         self.registerNib(self.eventCellNib, forCellReuseIdentifier: "DiscoverEventCell")
