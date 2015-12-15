@@ -50,13 +50,19 @@ class DiscoverTableView: UITableView, UITableViewDataSource {
         if event.headerImage != nil {
             dispatch_async(GlobalBackgroundQueue, { () -> Void in
                 let url = NSURL(string: event.headerImage!)!
-                let data = NSData(contentsOfURL: url)!
+                let data = NSData(contentsOfURL: url)
                 
-                let headerImage: UIImage = UIImage(data: data)!
-                
-                dispatch_async(GlobalMainQueue, { () -> Void in
-                    cell.setEventImage(headerImage)
-                })
+                if data == nil {
+                    dispatch_async(GlobalMainQueue, { () -> Void in
+                        cell.eventImageView.backgroundColor = UIColor.darkGrayColor()
+                    })
+                } else {
+                    let headerImage: UIImage = UIImage(data: data!)!
+                    
+                    dispatch_async(GlobalMainQueue, { () -> Void in
+                        cell.setEventImage(headerImage)
+                    })
+                }
             })
         } else {
             cell.eventImageView.backgroundColor = UIColor.darkGrayColor()
