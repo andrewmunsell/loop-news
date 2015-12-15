@@ -52,8 +52,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
      * Handle an incoming notification
      */
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
-        let notification = NSNotification(name: "showEvent", object: userInfo)
-        NSNotificationCenter.defaultCenter().postNotification(notification)
+        if application.applicationState == .Inactive {
+            let notification = NSNotification(name: "showEvent", object: userInfo)
+            NSNotificationCenter.defaultCenter().postNotification(notification)
+        } else {
+            PFPush.handlePush(userInfo)
+        }
     }
 
     func applicationWillResignActive(application: UIApplication) {

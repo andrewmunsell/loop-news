@@ -28,6 +28,9 @@ class DiscoverViewController: UIViewController, UITableViewDelegate {
         
         self.discoverTable.addSubview(refreshControl)
         self.discoverTable.refreshControl = refreshControl
+        
+        // Set up the listener for APNS
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "showEvent:", name: "showEvent", object: nil)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -59,9 +62,26 @@ class DiscoverViewController: UIViewController, UITableViewDelegate {
        Event.all() { (events: [Event]?, err: NSError?) -> Void in
             if events != nil {
                 self.discoverTable.events = events!
+                
                 self.discoverTable.reloadData()
                 self.discoverTable.setNeedsDisplay()
                 self.discoverTable.refreshControl?.endRefreshing()
+            }
+        }
+    }
+    
+    /**
+     * Show the event. Triggered by a push notification
+     */
+    func showEvent(sender: AnyObject?) {
+        let notification = sender as! NSNotification
+        
+        let story = (notification.object!["story"] as! String)
+        Story.get(story) { (story: Story?, err: NSError?) -> Void in
+            if story != nil {
+                self.selectedEvent = story?.event
+                
+                self.performSegueWithIdentifier("ShowTimeline", sender: nil)
             }
         }
     }
