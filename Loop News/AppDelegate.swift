@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Setup APNS
-        let notifSettings = UIUserNotificationSettings(forTypes: [.Badge, .Sound], categories: nil)
+        let notifSettings = UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil)
         application.registerUserNotificationSettings(notifSettings)
         application.registerForRemoteNotifications()
         
@@ -45,7 +45,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         parseInstallation.setDeviceTokenFromData(deviceToken)
         parseInstallation.channels = ["global", PFUser.currentUser()!.objectId!]
         
-        parseInstallation.saveEventually()
+        parseInstallation.saveInBackground()
+    }
+    
+    /**
+     * Handle an incoming notification
+     */
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+        let notification = NSNotification(name: "showEvent", object: userInfo)
+        NSNotificationCenter.defaultCenter().postNotification(notification)
     }
 
     func applicationWillResignActive(application: UIApplication) {
