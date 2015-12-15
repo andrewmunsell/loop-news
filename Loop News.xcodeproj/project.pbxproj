@@ -461,7 +461,6 @@
 				493140A21C113D7900F63243 /* Event.swift in Sources */,
 				49C5C57B1C112A1C0075FFD5 /* DiscoverViewController.swift in Sources */,
 				A81C45901C1CD0AB004DA81F /* DiscoverEventCell.swift in Sources */,
-				49EF79D91C1943DB001D6BBA /* TimelineHeaderCell.swift in Sources */,
 				A81C458D1C1CCD63004DA81F /* DiscoverTableView.swift in Sources */,
 				49C5C5831C1131BB0075FFD5 /* MapViewController.swift in Sources */,
 				49EF79CA1C192032001D6BBA /* Subscription.swift in Sources */,
