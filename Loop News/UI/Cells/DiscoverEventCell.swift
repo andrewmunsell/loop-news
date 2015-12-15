@@ -22,7 +22,8 @@ class DiscoverEventCell: UITableViewCell {
      */
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.eventImageView.contentMode = .ScaleToFill
+        
+        self.eventImageView.contentMode = .ScaleAspectFill
     }
     
     /**
