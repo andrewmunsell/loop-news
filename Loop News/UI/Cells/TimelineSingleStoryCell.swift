@@ -43,6 +43,8 @@ class TimelineSingleStoryCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         
+        self.accessoryType = .DisclosureIndicator
+        
         let circleView = self.viewWithTag(TimelineSingleStoryCell.CIRCLE_VIEW_TAG)!
         
         circleView.layer.cornerRadius = circleView.layer.frame.width / 2
