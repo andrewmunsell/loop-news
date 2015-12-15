@@ -6,6 +6,7 @@
 //  Copyright © 2015 Loop News. All rights reserved.
 //
 
+import Parse
 import SafariServices
 
 class TimelineViewController: UIViewController, UITableViewDelegate, TimelineHeaderCellDelegate {
@@ -16,6 +17,11 @@ class TimelineViewController: UIViewController, UITableViewDelegate, TimelineHea
      * Event for this timeline view
      */
     var event: Event?
+    
+    /**
+     * Reading marker for the current event
+     */
+    var readingMarker: ReadingMarker?
     
     override func viewDidLoad() {
         // Set this view controller as the delegate for the table
@@ -93,10 +99,31 @@ class TimelineViewController: UIViewController, UITableViewDelegate, TimelineHea
             if stories != nil {
                 self.timelineTable.stories = stories!
                 
-                self.timelineTable.reloadData()
-                self.timelineTable.setNeedsDisplay()
-                
                 self.timelineTable.refreshControl?.endRefreshing()
+                
+                ReadingMarker.forCurrentUserAndEvent(self.event!) { (marker: ReadingMarker?, err: NSError?) -> Void in
+                    self.timelineTable.lastReadStory = marker?.story
+                    
+                    self.readingMarker = marker
+                    
+                    // Now that the user has "seen" all of the stories, store the reading marker for the first story in the array.
+                    if self.readingMarker == nil && stories!.count > 0 {
+                        let marker = ReadingMarker()
+                        
+                        marker.event = self.event!
+                        marker.story = stories![0]
+                        marker.user = PFUser.currentUser()!
+                        
+                        marker.saveInBackground()
+                    } else if stories!.count > 0 {
+                        self.readingMarker!.story = stories![0]
+                        
+                        self.readingMarker!.saveInBackground()
+                    }
+                    
+                    self.timelineTable.reloadData()
+                    self.timelineTable.setNeedsDisplay()
+                }
             }
         }
     }

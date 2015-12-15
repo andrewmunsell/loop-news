@@ -10,6 +10,7 @@
 		4931409A1C113BFD00F63243 /* LoopNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493140991C113BFD00F63243 /* LoopNews.swift */; };
 		4931409E1C113CD000F63243 /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4931409D1C113CD000F63243 /* Story.swift */; };
 		493140A21C113D7900F63243 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493140A11C113D7900F63243 /* Event.swift */; };
+		496695771C1FD77B00D613BB /* ReadingMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496695761C1FD77B00D613BB /* ReadingMarker.swift */; };
 		49771F961C1E04EB0056597F /* UIButton+setBackgroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49771F951C1E04EB0056597F /* UIButton+setBackgroundColor.swift */; };
 		49771F981C1E0B7E0056597F /* TimelineHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49771F971C1E0B7E0056597F /* TimelineHeaderCell.swift */; };
 		49771F9A1C1E0C790056597F /* TimelineHeaderCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49771F991C1E0C790056597F /* TimelineHeaderCellDelegate.swift */; };
@@ -58,6 +59,7 @@
 		493140991C113BFD00F63243 /* LoopNews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoopNews.swift; path = Libraries/LoopNews.swift; sourceTree = "<group>"; };
 		4931409D1C113CD000F63243 /* Story.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Story.swift; path = Models/Story.swift; sourceTree = "<group>"; };
 		493140A11C113D7900F63243 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Event.swift; path = Models/Event.swift; sourceTree = "<group>"; };
+		496695761C1FD77B00D613BB /* ReadingMarker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReadingMarker.swift; path = Models/ReadingMarker.swift; sourceTree = "<group>"; };
 		49771F951C1E04EB0056597F /* UIButton+setBackgroundColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIButton+setBackgroundColor.swift"; path = "Extensions/UIButton+setBackgroundColor.swift"; sourceTree = "<group>"; };
 		49771F971C1E0B7E0056597F /* TimelineHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimelineHeaderCell.swift; path = UI/Cells/TimelineHeaderCell.swift; sourceTree = "<group>"; };
 		49771F991C1E0C790056597F /* TimelineHeaderCellDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimelineHeaderCellDelegate.swift; path = Protocols/TimelineHeaderCellDelegate.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				493140A11C113D7900F63243 /* Event.swift */,
+				496695761C1FD77B00D613BB /* ReadingMarker.swift */,
 				4931409D1C113CD000F63243 /* Story.swift */,
 				49EF79C91C192032001D6BBA /* Subscription.swift */,
 			);
@@ -466,6 +469,7 @@
 				493140A21C113D7900F63243 /* Event.swift in Sources */,
 				49C5C57B1C112A1C0075FFD5 /* DiscoverViewController.swift in Sources */,
 				A81C45901C1CD0AB004DA81F /* DiscoverEventCell.swift in Sources */,
+				496695771C1FD77B00D613BB /* ReadingMarker.swift in Sources */,
 				A81C458D1C1CCD63004DA81F /* DiscoverTableView.swift in Sources */,
 				49C5C5831C1131BB0075FFD5 /* MapViewController.swift in Sources */,
 				49EF79CA1C192032001D6BBA /* Subscription.swift in Sources */,

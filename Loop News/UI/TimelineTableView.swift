@@ -20,6 +20,11 @@ class TimelineTableView: UITableView, UITableViewDataSource {
     var stories: [Story] = []
     
     /**
+     * The last story that was read by the current user
+     */
+    var lastReadStory: Story?
+    
+    /**
      * Delegate to assign to the timeline header cell
      */
     var timelineHeaderCellDelegate: TimelineHeaderCellDelegate?
@@ -81,9 +86,11 @@ class TimelineTableView: UITableView, UITableViewDataSource {
             case "link":
                 let cell = self.dequeueReusableCellWithIdentifier("TimelineSingleStoryCell") as! TimelineSingleStoryCell
                 
-                cell.setIsStoryBorderingNewStories(false)
-                cell.setStoryTitle(self.stories[indexPath.row - 1].title)
-                cell.setStoryDate(self.stories[indexPath.row - 1].date)
+                // Set the story as the "last read" story if it isn't the first story in the timeline and if it matches the ID of the last read story
+                cell.setIsStoryBorderingNewStories(indexPath.row - 1 != 0 && story.objectId == self.lastReadStory?.objectId)
+                
+                cell.setStoryTitle(story.title)
+                cell.setStoryDate(story.date)
                 
                 cell.setIsLastStory(indexPath.row == self.stories.count)
                 
