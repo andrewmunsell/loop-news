@@ -64,17 +64,17 @@
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oZ2-Jp-739" userLabel="New Stories Marker">
-                        <rect key="frame" x="48" y="8" width="358" height="26"/>
+                        <rect key="frame" x="48" y="8" width="358" height="28"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cpi-2g-58N" userLabel="New Marker">
-                                <rect key="frame" x="0.0" y="12" width="272" height="2"/>
+                                <rect key="frame" x="0.0" y="13" width="272" height="2"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="2" id="QZg-Gf-ZNI"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Stories" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U4v-Yj-ZX8">
-                                <rect key="frame" x="280" y="4" width="78" height="17"/>
+                                <rect key="frame" x="280" y="5" width="78" height="17"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -105,8 +105,9 @@
                     <constraint firstItem="JfN-dG-s7o" firstAttribute="height" secondItem="NvR-T2-IAp" secondAttribute="height" id="OQH-7y-fC6"/>
                     <constraint firstItem="JfN-dG-s7o" firstAttribute="width" secondItem="NvR-T2-IAp" secondAttribute="width" id="Tcs-yV-GLe"/>
                     <constraint firstAttribute="bottomMargin" secondItem="1Q5-HG-Nsc" secondAttribute="bottom" constant="28" id="V9p-Vb-f5G"/>
-                    <constraint firstItem="NvR-T2-IAp" firstAttribute="top" secondItem="oZ2-Jp-739" secondAttribute="bottom" id="XFJ-kX-42I"/>
+                    <constraint firstItem="NvR-T2-IAp" firstAttribute="top" secondItem="oZ2-Jp-739" secondAttribute="bottom" priority="750" id="XFJ-kX-42I"/>
                     <constraint firstAttribute="trailingMargin" secondItem="oZ2-Jp-739" secondAttribute="trailing" constant="8" id="bhT-iy-vLI"/>
+                    <constraint firstItem="1Q5-HG-Nsc" firstAttribute="top" secondItem="oZ2-Jp-739" secondAttribute="bottom" id="byU-O8-rWp"/>
                     <constraint firstItem="oZ2-Jp-739" firstAttribute="leading" secondItem="eBv-Mn-Hzu" secondAttribute="trailing" id="uRg-09-Vv9"/>
                     <constraint firstItem="JfN-dG-s7o" firstAttribute="centerX" secondItem="NvR-T2-IAp" secondAttribute="centerX" id="xhE-w1-y2b"/>
                 </constraints>
