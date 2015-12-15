@@ -31,6 +31,7 @@ class TimelineTableView: UITableView, UITableViewDataSource {
     
     private var headerCellNib = UINib(nibName: "TimelineHeaderCell", bundle: NSBundle.mainBundle())
     private var singleStoryCellNib = UINib(nibName: "TimelineSingleStoryCell", bundle: NSBundle.mainBundle())
+    private var imageCellNib = UINib(nibName: "TimelineImageCell", bundle: NSBundle.mainBundle())
     
     /**
      * Override the init to ensure the table is setup properly
@@ -47,6 +48,7 @@ class TimelineTableView: UITableView, UITableViewDataSource {
         // Register the cell nibs
         self.registerNib(self.headerCellNib, forCellReuseIdentifier: "TimelineHeaderCell")
         self.registerNib(self.singleStoryCellNib, forCellReuseIdentifier: "TimelineSingleStoryCell")
+        self.registerNib(self.imageCellNib, forCellReuseIdentifier: "TimelineImageCell")
     }
         
     override func layoutSubviews() {
@@ -91,6 +93,18 @@ class TimelineTableView: UITableView, UITableViewDataSource {
                 
                 cell.setStoryTitle(story.title)
                 cell.setStoryDate(story.date)
+                
+                cell.setIsLastStory(indexPath.row == self.stories.count)
+                
+                return cell
+            case "image":
+                let cell = self.dequeueReusableCellWithIdentifier("TimelineImageCell") as! TimelineImageCell
+                
+                // Set the story as the "last read" story if it isn't the first story in the timeline and if it matches the ID of the last read story
+                cell.setIsStoryBorderingNewStories(indexPath.row - 1 != 0 && story.objectId == self.lastReadStory?.objectId)
+                
+                cell.setStoryDate(story.date)
+                cell.setStoryImage(story.url)
                 
                 cell.setIsLastStory(indexPath.row == self.stories.count)
                 

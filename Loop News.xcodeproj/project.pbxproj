@@ -11,6 +11,8 @@
 		4931409E1C113CD000F63243 /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4931409D1C113CD000F63243 /* Story.swift */; };
 		493140A21C113D7900F63243 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493140A11C113D7900F63243 /* Event.swift */; };
 		496695771C1FD77B00D613BB /* ReadingMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496695761C1FD77B00D613BB /* ReadingMarker.swift */; };
+		4966957B1C1FE28400D613BB /* TimelineImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4966957A1C1FE28400D613BB /* TimelineImageCell.xib */; };
+		4966957D1C1FE32900D613BB /* TimelineImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4966957C1C1FE32900D613BB /* TimelineImageCell.swift */; };
 		49771F961C1E04EB0056597F /* UIButton+setBackgroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49771F951C1E04EB0056597F /* UIButton+setBackgroundColor.swift */; };
 		49771F981C1E0B7E0056597F /* TimelineHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49771F971C1E0B7E0056597F /* TimelineHeaderCell.swift */; };
 		49771F9A1C1E0C790056597F /* TimelineHeaderCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49771F991C1E0C790056597F /* TimelineHeaderCellDelegate.swift */; };
@@ -60,6 +62,8 @@
 		4931409D1C113CD000F63243 /* Story.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Story.swift; path = Models/Story.swift; sourceTree = "<group>"; };
 		493140A11C113D7900F63243 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Event.swift; path = Models/Event.swift; sourceTree = "<group>"; };
 		496695761C1FD77B00D613BB /* ReadingMarker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReadingMarker.swift; path = Models/ReadingMarker.swift; sourceTree = "<group>"; };
+		4966957A1C1FE28400D613BB /* TimelineImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TimelineImageCell.xib; path = UI/Cells/TimelineImageCell.xib; sourceTree = "<group>"; };
+		4966957C1C1FE32900D613BB /* TimelineImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimelineImageCell.swift; path = UI/Cells/TimelineImageCell.swift; sourceTree = "<group>"; };
 		49771F951C1E04EB0056597F /* UIButton+setBackgroundColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIButton+setBackgroundColor.swift"; path = "Extensions/UIButton+setBackgroundColor.swift"; sourceTree = "<group>"; };
 		49771F971C1E0B7E0056597F /* TimelineHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimelineHeaderCell.swift; path = UI/Cells/TimelineHeaderCell.swift; sourceTree = "<group>"; };
 		49771F991C1E0C790056597F /* TimelineHeaderCellDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimelineHeaderCellDelegate.swift; path = Protocols/TimelineHeaderCellDelegate.swift; sourceTree = "<group>"; };
@@ -254,6 +258,8 @@
 				49EF79D31C193954001D6BBA /* TimelineSingleStoryCell.xib */,
 				49771F971C1E0B7E0056597F /* TimelineHeaderCell.swift */,
 				49EF79D61C193F57001D6BBA /* TimelineHeaderCell.xib */,
+				4966957C1C1FE32900D613BB /* TimelineImageCell.swift */,
+				4966957A1C1FE28400D613BB /* TimelineImageCell.xib */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -390,6 +396,7 @@
 				49D3A2C11C055A3900F2D249 /* LaunchScreen.storyboard in Resources */,
 				49D3A2BE1C055A3900F2D249 /* Assets.xcassets in Resources */,
 				49EF79D51C193954001D6BBA /* TimelineSingleStoryCell.xib in Resources */,
+				4966957B1C1FE28400D613BB /* TimelineImageCell.xib in Resources */,
 				49EF79D71C193F57001D6BBA /* TimelineHeaderCell.xib in Resources */,
 				49D3A2BC1C055A3900F2D249 /* Main.storyboard in Resources */,
 				A81C45911C1CD0AB004DA81F /* DiscoverEventCell.xib in Resources */,
@@ -477,6 +484,7 @@
 				49D3A2B71C055A3900F2D249 /* AppDelegate.swift in Sources */,
 				49EF79D41C193954001D6BBA /* TimelineSingleStoryCell.swift in Sources */,
 				49C5C57D1C112A310075FFD5 /* SettingsViewController.swift in Sources */,
+				4966957D1C1FE32900D613BB /* TimelineImageCell.swift in Sources */,
 				49771F961C1E04EB0056597F /* UIButton+setBackgroundColor.swift in Sources */,
 				49771F981C1E0B7E0056597F /* TimelineHeaderCell.swift in Sources */,
 				49C5C57F1C112A430075FFD5 /* TimelineViewController.swift in Sources */,
