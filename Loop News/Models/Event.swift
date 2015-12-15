@@ -44,6 +44,8 @@ class Event: PFObject, PFSubclassing {
     static func all(callback: ([Event]?, NSError?) -> Void) {
         let query = Event.query()!
         
+        query.orderByDescending("date")
+        
         query.findObjectsInBackgroundWithBlock { (events: [PFObject]?, err: NSError?) -> Void in
             callback(events as? [Event], err)
         }
