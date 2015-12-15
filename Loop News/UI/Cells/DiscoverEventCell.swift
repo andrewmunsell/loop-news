@@ -23,6 +23,8 @@ class DiscoverEventCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         
+        self.layer.masksToBounds = true
+        
         self.eventImageView.contentMode = .ScaleAspectFill
     }
     
