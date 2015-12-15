@@ -15,10 +15,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        // Setup APNS
+        let notifSettings = UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil)
+        application.registerUserNotificationSettings(notifSettings)
+        application.registerForRemoteNotifications()
+        
+        // Setup Parse
         Parse.setApplicationId("dzEbbwL3qNmZXASa9uTObhiZXE1rDONUxjrlD9LQ",
             clientKey: "fBViAezq7SPfS98ALm5kRToRpji4y1i1SJiZJNoq")
         
         PFUser.enableAutomaticUser()
+        PFUser.currentUser()
         PFUser.currentUser()?.saveEventually()
         
         // Initialize the Parse objects
@@ -27,6 +34,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Subscription.initialize()
         
         return true
+    }
+    
+    /**
+     * Handle APNS registration and save the token to Parse
+     */
+    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+        let parseInstallation = PFInstallation.currentInstallation()
+        
+        parseInstallation.setDeviceTokenFromData(deviceToken)
+        parseInstallation.channels = ["global", PFUser.currentUser()!.objectId!]
+        
+        parseInstallation.saveInBackground()
+    }
+    
+    /**
+     * Handle an incoming notification
+     */
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+        if application.applicationState == .Inactive {
+            let notification = NSNotification(name: "showEvent", object: userInfo)
+            NSNotificationCenter.defaultCenter().postNotification(notification)
+        } else {
+            PFPush.handlePush(userInfo)
+        }
     }
 
     func applicationWillResignActive(application: UIApplication) {

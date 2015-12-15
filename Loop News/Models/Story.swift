@@ -38,6 +38,19 @@ class Story: PFObject, PFSubclassing {
     }
     
     /**
+     * Get a story by its primary key
+     */
+    static func get(id: String, callback: (Story?, NSError?) -> Void) {
+        let query = Story.query()!
+        
+        query.includeKey("event")
+        
+        query.getObjectInBackgroundWithId(id) { (story: PFObject?, err: NSError?) -> Void in
+            callback(story as? Story, err)
+        }
+    }
+    
+    /**
      * Get the stories that belong to the specified event
      */
     static func forEvent(event: Event, callback: ([Story]?, NSError?) -> Void) {

@@ -9,13 +9,19 @@
 import Eureka
 
 class SettingsViewController: FormViewController {
+    private var refreshControl: UIRefreshControl?
     private var subsSection: Section?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Setup the navigation bar
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Refresh, target: self, action: "refresh")
+        // Setup the pull-to-refresh
+        let refreshControl = UIRefreshControl()
+        refreshControl.attributedTitle = NSAttributedString(string: "Pull to Refresh")
+        refreshControl.addTarget(self, action: "refresh", forControlEvents: .ValueChanged)
+        
+        self.tableView?.addSubview(refreshControl)
+        self.refreshControl = refreshControl
         
         // Setup the form
         self.subsSection = Section("Followed Events")
@@ -52,6 +58,8 @@ class SettingsViewController: FormViewController {
                         $0.evaluateDisabled()
                     }
             }
+            
+            self.refreshControl?.endRefreshing()
         }
     }
 }

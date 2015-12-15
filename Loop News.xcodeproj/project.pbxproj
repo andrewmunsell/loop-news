@@ -211,11 +211,11 @@
 		49D3A2B51C055A3900F2D249 /* Loop News */ = {
 			isa = PBXGroup;
 			children = (
-				493140981C113BEC00F63243 /* Libraries */,
-				49C5C5791C11299F0075FFD5 /* Protocols */,
-				49771F941C1E04CF0056597F /* Extensions */,
 				49C5C5771C1129950075FFD5 /* Controllers */,
+				49771F941C1E04CF0056597F /* Extensions */,
+				493140981C113BEC00F63243 /* Libraries */,
 				49C5C5781C11299A0075FFD5 /* Models */,
+				49C5C5791C11299F0075FFD5 /* Protocols */,
 				493140971C11390B00F63243 /* UI */,
 				49D3A2B61C055A3900F2D249 /* AppDelegate.swift */,
 				49D3A2BA1C055A3900F2D249 /* Main.storyboard */,
@@ -347,6 +347,11 @@
 					49D3A2B21C055A3900F2D249 = {
 						CreatedOnToolsVersion = 7.1.1;
 						DevelopmentTeam = H9LUM9PU28;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					49D3A2C61C055A3900F2D249 = {
 						CreatedOnToolsVersion = 7.1.1;
@@ -627,7 +632,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Loop News/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "net.loopnews.Loop-News";
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.uw.Loop-News";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Loop News/Loop News-Bridging-Header.h";
@@ -646,7 +651,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Loop News/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "net.loopnews.Loop-News";
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.uw.Loop-News";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Loop News/Loop News-Bridging-Header.h";
