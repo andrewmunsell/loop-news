@@ -25,9 +25,6 @@ class TimelineViewController: UIViewController, UITableViewDelegate, TimelineHea
         // Set the event for the timeline table
         self.timelineTable.event = event
         
-        // Hide the nav bar for the timeline since we have our own custom UI
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
-        
         // Setup pull to refresh
         let refreshControl = UIRefreshControl()
         
@@ -39,6 +36,11 @@ class TimelineViewController: UIViewController, UITableViewDelegate, TimelineHea
         
         // Now, load the data
         self.refresh()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        // Hide the nav bar for the timeline since we have our own custom UI
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
     override func viewWillDisappear(animated: Bool) {
