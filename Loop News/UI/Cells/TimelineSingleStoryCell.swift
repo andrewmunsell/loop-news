@@ -35,6 +35,11 @@ class TimelineSingleStoryCell: UITableViewCell {
      */
     @IBOutlet weak var timelineLineView: UIView!
     
+    /**
+     * Marker that shows what stories are new for a visitor
+     */
+    @IBOutlet weak var newStoriesMarkerView: UIView!
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         
@@ -43,6 +48,13 @@ class TimelineSingleStoryCell: UITableViewCell {
         circleView.layer.cornerRadius = circleView.layer.frame.width / 2
         circleView.layer.masksToBounds = true
         circleView.clipsToBounds = true
+    }
+    
+    /**
+     * Sets whether the story is bordering the "new" stories for the user
+     */
+    func setIsStoryBorderingNewStories(bordering: Bool) {
+       self.newStoriesMarkerView.hidden = !bordering
     }
 
     /**

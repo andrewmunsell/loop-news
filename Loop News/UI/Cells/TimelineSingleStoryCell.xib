@@ -22,7 +22,7 @@
                             <constraint firstAttribute="width" constant="2" id="Ydj-2m-aAf"/>
                         </constraints>
                     </view>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NvR-T2-IAp" userLabel="Circle">
+                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NvR-T2-IAp" userLabel="Circle">
                         <rect key="frame" x="22" y="34" width="50" height="50"/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -63,11 +63,38 @@
                             <constraint firstItem="Ee2-xm-pKH" firstAttribute="leading" secondItem="1Q5-HG-Nsc" secondAttribute="leading" id="kpc-kw-qq0"/>
                         </constraints>
                     </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oZ2-Jp-739" userLabel="New Stories Marker">
+                        <rect key="frame" x="48" y="8" width="358" height="26"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cpi-2g-58N" userLabel="New Marker">
+                                <rect key="frame" x="0.0" y="12" width="272" height="2"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="QZg-Gf-ZNI"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Stories" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U4v-Yj-ZX8">
+                                <rect key="frame" x="280" y="4" width="78" height="17"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="U4v-Yj-ZX8" secondAttribute="trailing" id="HjR-62-K2u"/>
+                            <constraint firstItem="U4v-Yj-ZX8" firstAttribute="leading" secondItem="cpi-2g-58N" secondAttribute="trailing" constant="8" id="KaK-nA-2sd"/>
+                            <constraint firstItem="cpi-2g-58N" firstAttribute="leading" secondItem="oZ2-Jp-739" secondAttribute="leading" id="Lsb-tU-DIG"/>
+                            <constraint firstItem="U4v-Yj-ZX8" firstAttribute="centerY" secondItem="cpi-2g-58N" secondAttribute="centerY" id="gyK-mv-0Nm"/>
+                            <constraint firstItem="cpi-2g-58N" firstAttribute="centerY" secondItem="oZ2-Jp-739" secondAttribute="centerY" id="wnb-vT-ctY"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailingMargin" secondItem="1Q5-HG-Nsc" secondAttribute="trailing" id="05k-Ht-cSj"/>
                     <constraint firstItem="1Q5-HG-Nsc" firstAttribute="centerY" secondItem="hAv-fj-AAN" secondAttribute="centerY" id="5ib-wq-Wgi"/>
                     <constraint firstItem="JfN-dG-s7o" firstAttribute="centerY" secondItem="NvR-T2-IAp" secondAttribute="centerY" id="6gc-uF-Qrh"/>
+                    <constraint firstItem="oZ2-Jp-739" firstAttribute="top" secondItem="hAv-fj-AAN" secondAttribute="topMargin" id="ApS-Np-hSj"/>
                     <constraint firstItem="eBv-Mn-Hzu" firstAttribute="top" secondItem="hAv-fj-AAN" secondAttribute="topMargin" constant="-8" id="ELj-WA-JlS"/>
                     <constraint firstItem="NvR-T2-IAp" firstAttribute="centerY" secondItem="hAv-fj-AAN" secondAttribute="centerY" id="HFo-sr-n0l"/>
                     <constraint firstItem="1Q5-HG-Nsc" firstAttribute="top" secondItem="hAv-fj-AAN" secondAttribute="topMargin" constant="28" id="HR9-qe-yE5"/>
@@ -78,11 +105,15 @@
                     <constraint firstItem="JfN-dG-s7o" firstAttribute="height" secondItem="NvR-T2-IAp" secondAttribute="height" id="OQH-7y-fC6"/>
                     <constraint firstItem="JfN-dG-s7o" firstAttribute="width" secondItem="NvR-T2-IAp" secondAttribute="width" id="Tcs-yV-GLe"/>
                     <constraint firstAttribute="bottomMargin" secondItem="1Q5-HG-Nsc" secondAttribute="bottom" constant="28" id="V9p-Vb-f5G"/>
+                    <constraint firstItem="NvR-T2-IAp" firstAttribute="top" secondItem="oZ2-Jp-739" secondAttribute="bottom" id="XFJ-kX-42I"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="oZ2-Jp-739" secondAttribute="trailing" constant="8" id="bhT-iy-vLI"/>
+                    <constraint firstItem="oZ2-Jp-739" firstAttribute="leading" secondItem="eBv-Mn-Hzu" secondAttribute="trailing" id="uRg-09-Vv9"/>
                     <constraint firstItem="JfN-dG-s7o" firstAttribute="centerX" secondItem="NvR-T2-IAp" secondAttribute="centerX" id="xhE-w1-y2b"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="circleDateLabel" destination="JfN-dG-s7o" id="Acx-c3-sty"/>
+                <outlet property="newStoriesMarkerView" destination="oZ2-Jp-739" id="R1j-Dx-zjh"/>
                 <outlet property="timelineLineView" destination="eBv-Mn-Hzu" id="Alq-am-uan"/>
             </connections>
             <point key="canvasLocation" x="250" y="228.5"/>

@@ -81,6 +81,7 @@ class TimelineTableView: UITableView, UITableViewDataSource {
             case "link":
                 let cell = self.dequeueReusableCellWithIdentifier("TimelineSingleStoryCell") as! TimelineSingleStoryCell
                 
+                cell.setIsStoryBorderingNewStories(false)
                 cell.setStoryTitle(self.stories[indexPath.row - 1].title)
                 cell.setStoryDate(self.stories[indexPath.row - 1].date)
                 
