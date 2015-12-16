@@ -31,6 +31,8 @@ class DiscoverViewController: UIViewController, UITableViewDelegate {
         
         // Set up the listener for APNS
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "showEvent:", name: "showEvent", object: nil)
+        
+        // definesPresentationContext = true
     }
     
     override func viewWillAppear(animated: Bool) {

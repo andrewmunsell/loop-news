@@ -8,13 +8,15 @@
 
 import UIKit
 
-class DiscoverTableView: UITableView, UITableViewDataSource {
+class DiscoverTableView: UITableView, UITableViewDataSource, UISearchResultsUpdating {
     var refreshControl: UIRefreshControl?
     
     /**
      * Events in the discovery view
      */
     var events: [Event] = []
+    var filteredEvents = [Event]()
+    let searchController = UISearchController(searchResultsController: nil)
     
     private var eventCellNib = UINib(nibName: "DiscoverEventCell", bundle: NSBundle.mainBundle())
     
@@ -29,6 +31,15 @@ class DiscoverTableView: UITableView, UITableViewDataSource {
         
         // Register the cell nib
         self.registerNib(self.eventCellNib, forCellReuseIdentifier: "DiscoverEventCell")
+        
+        // search view
+        searchController.searchResultsUpdater = self
+        searchController.dimsBackgroundDuringPresentation = false
+        self.tableHeaderView = searchController.searchBar
+        
+        // offset tableHeaderView to hide search when table is scrollable
+        self.contentOffset = CGPointMake(0,
+            CGRectGetHeight(searchController.searchBar.frame));
     }
     
     override func layoutSubviews() {
@@ -39,12 +50,24 @@ class DiscoverTableView: UITableView, UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if searchController.active && searchController.searchBar.text != "" {
+            return filteredEvents.count
+        }
         return self.events.count
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = self.dequeueReusableCellWithIdentifier("DiscoverEventCell") as! DiscoverEventCell
-        let event = self.events[indexPath.row]
+        
+        // set filtered event if searchController active
+        let event: Event
+        if searchController.active && searchController.searchBar.text != "" {
+            event = self.filteredEvents[indexPath.row]
+        } else {
+            // otherwise, set event from all events
+            event = self.events[indexPath.row]
+        }
+        
         cell.setEventTitle(event.title)
         cell.setEventDate(event.date)
         if event.headerImage != nil {
@@ -69,5 +92,25 @@ class DiscoverTableView: UITableView, UITableViewDataSource {
         }
         
         return cell
+    }
+    
+    /**
+     * Filters all events based on the search text
+     * If the event title doesn't have a substring equal to the
+     * search text, it will be filtered out of the shown events
+     */
+    func filterEventsForSearchText(searchText: String, scope: String = "All") {
+        self.filteredEvents = self.events.filter { event in
+            return event.title.lowercaseString.containsString(searchText.lowercaseString)
+        }
+        
+        self.reloadData()
+    }
+    
+    /**
+     * Implements UISearchResultsUpdating protocol requirements
+     */
+    func updateSearchResultsForSearchController(searchController: UISearchController) {
+        filterEventsForSearchText(searchController.searchBar.text!)
     }
 }
