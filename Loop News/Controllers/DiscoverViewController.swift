@@ -90,6 +90,7 @@ class DiscoverViewController: UIViewController, UITableViewDelegate {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier != nil && segue.identifier! == "ShowTimeline" {
+            self.discoverTable.searchController.active = false
             let destinationVC = segue.destinationViewController as! TimelineViewController
             destinationVC.event = self.selectedEvent
         }
