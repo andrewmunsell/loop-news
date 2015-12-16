@@ -33,6 +33,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Story.initialize()
         Subscription.initialize()
         
+        // Reset the notification badge count
+        application.applicationIconBadgeNumber = 0
+        
         return true
     }
     
