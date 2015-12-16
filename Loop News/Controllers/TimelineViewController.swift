@@ -55,6 +55,21 @@ class TimelineViewController: UIViewController, UITableViewDelegate, TimelineHea
     }
     
     /**
+     * "Share" the event. The URL is fake because we don't have an actual web service component,
+     * but the URL would open a web page which would trigger a custom URL scheme if the app was installed
+     * on the recipient's device, or have a link to the app store if not.
+     */
+    @IBAction func shareButtonTapped(sender: UIBarButtonItem) {
+        let shareMessage = "Check out this story I found on Loop News"
+        let website = NSURL(string: "https://loop.news/x26skm")!
+        
+        let shareItems = [shareMessage, website]
+        
+        let activityController = UIActivityViewController(activityItems: shareItems, applicationActivities: nil)
+        self.presentViewController(activityController, animated: true, completion: nil)
+    }
+    
+    /**
      * Handle tapping a story
      */
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
