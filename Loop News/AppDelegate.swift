@@ -52,6 +52,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
      * Handle an incoming notification
      */
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+        application.applicationIconBadgeNumber = 0
+        
         if application.applicationState == .Inactive {
             let notification = NSNotification(name: "showEvent", object: userInfo)
             NSNotificationCenter.defaultCenter().postNotification(notification)
