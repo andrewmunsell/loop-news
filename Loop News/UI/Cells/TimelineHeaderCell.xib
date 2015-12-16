@@ -18,7 +18,7 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Lka-4U-tqL" userLabel="Event Image">
                         <rect key="frame" x="0.0" y="0.0" width="406" height="138"/>
                         <constraints>
-                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="150" id="mN3-EP-oZI"/>
+                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="200" id="mN3-EP-oZI"/>
                         </constraints>
                     </imageView>
                     <view contentMode="scaleToFill" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="Zo6-Gd-r9F" userLabel="Text">
